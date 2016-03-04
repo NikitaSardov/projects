@@ -10,13 +10,13 @@ body {
     background: #66cc33;
 }
 
-.logo{
+.author__photo{
     position: fixed;
     width: 15%;
     height: auto;
     left: 3%;
     top: 10px;
-    border: 2px solid transparent;
+    border-radius: 50%;
 }
 
 .logo:hover {
