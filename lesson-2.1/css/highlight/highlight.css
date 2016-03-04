@@ -1,0 +1,42 @@
+::selection {
+    color: #ccffff;
+    background: #66cc33;
+}
+
+.highLight--GreenStatic:hover  {
+    background-color: #66cc33;
+    color: #ccffff;
+}
+
+.highLight--Green:hover {
+    background-color: #66cc33;
+    color: #ccffff;
+	animation-name: highLight--Green;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes highLight--Green{
+	100% {
+	background-color: #ff9900;
+	}
+}
+
+.highLight--Yellow:hover {
+    background-color: #ff9900;
+    color: #000000;
+	border-color: #ff9900;
+	animation-name: highLight--Yellow;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes highLight--Yellow{
+	100% {
+	background-color: #66cc33;
+	}
+}

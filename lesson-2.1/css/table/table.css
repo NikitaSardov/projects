@@ -1,0 +1,29 @@
+.table{
+    position: relative;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    background-color: #cccccc;
+    color: #333333;
+    border: hidden;
+    border-collapse: collapse;
+}
+
+tr, td, th{
+    padding: 3px 5px;
+    border: 1px solid #333333;
+}
+
+.table--highLight :hover{
+    cursor: pointer;
+	animation-name: row--highLight;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes row--highLight{
+	100% {
+	background-color: #66cc33;
+	}
+}

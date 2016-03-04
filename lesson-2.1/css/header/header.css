@@ -1,0 +1,38 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 100%;
+	height: auto;
+	background-color: #000000;
+	font-size: small;
+    text-align: center;
+    color: #66cc33;
+}
+
+.header__button{
+	display: inline-block;
+	padding: 1% 1% 1%;
+	margin: 1% 0 1%;
+	background-color: #66cc33;
+    color: #ccffff;
+}
+
+.header__logo {
+    position: fixed;
+    width: 15%;
+    left: 4%;
+    top: 1px;
+    border: 2px solid transparent;
+}
+
+.header:hover {
+	opacity: 1;
+}
+
+.header__logo:hover {
+    background-image: url(../../i/logo__bg.jpg);
+    background-size: cover;
+	border-color: #ff9900;
+	border-radius: 20px;
+}
