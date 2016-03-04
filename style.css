@@ -69,7 +69,7 @@ body {
 .article{
     padding: 0 5% 10px 5%;
     text-indent: 5%;
-    text-align: justify;
+    text-align: left;
     color: #cccccc;
     line-height: 1.5;
 }
