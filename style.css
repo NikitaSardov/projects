@@ -10,6 +10,14 @@ body {
     background: #66cc33;
 }
 
+.author{
+    position: fixed;
+    width: 15%;
+    height: auto;
+    left: 3%;
+    top: 10px;
+}
+
 .author__photo{
     position: fixed;
     width: 15%;
@@ -17,12 +25,21 @@ body {
     left: 3%;
     top: 10px;
     border-radius: 50% 50%;
+    -webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
 }
 
-.logo:hover {
-    background-image: url(bg-seti-button.jpg);
-    background-size: cover;
-    border-color: #ff9900;
+.author__photo:hover {
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	filter: grayscale(0%);
+	filter: none;
 }
 
 .card{
