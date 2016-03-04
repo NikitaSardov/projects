@@ -1,5 +1,4 @@
 # projects
 single repository for everything
 
-Это автопроверка валидности ХТМЛа через TravisCI
-## Статус ![](https://travis-ci.org/NikitaSardov/projects.svg)
+##Автопроверка валидности HTML через TravisCI: ![](https://travis-ci.org/NikitaSardov/projects.svg)
