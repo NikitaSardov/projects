@@ -41,7 +41,7 @@ body {
 	filter: grayscale(0%);
 	filter: none;
 	transform: scale(1.2);
-	transform: translate(10%, 10%);
+	transform: translate(5%, 5%);
 }
 
 .card{
