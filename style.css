@@ -40,7 +40,7 @@ body {
 	-o-filter: grayscale(0%);
 	filter: grayscale(0%);
 	filter: none;
-	scale: 1.2;
+	transform: scale(1.2);
 }
 
 .card{
