@@ -5,14 +5,7 @@
 	margin: 0 auto;
 }
 
-.nextReading__element1 {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-	width: 50%;
-}
-
-.nextReading__element2 {
+.nextReading__element {
 	display: inline-block;
 	padding: 0;
 	margin: 0;
@@ -27,9 +20,15 @@
 /* текст внутри элементов */
 .nextReading__text {
 	position: absolute;
+	display: inline;
 	top: 0;
 	padding: 70px;
 	color: #fff;	
+}
+
+.nextReading__a {
+	color: #fff;	
+	text-decoration: none;
 }
 
 .nextReading__header {

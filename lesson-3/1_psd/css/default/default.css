@@ -49,6 +49,10 @@ html, body {
 	color: #d7d7d7;
 }
 
+.firstScreen__line {
+	 size: 1px;
+	 color: #d7d7d7;
+}
 .firstScreen__writtenBy {
 	font-family: OpenSans, Arial, sans-serif;
 	font-size: 14px;
