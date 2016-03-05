@@ -1,0 +1,30 @@
+.card{
+    position: relative;
+    width:55%;
+    margin: 5.5% auto 0;
+    padding: 0;
+    text-align:center;
+    background-color: #333333;
+	opacity: 0.9;
+}
+
+.card__title{
+    width:100%;
+    background-color: #666666;
+    padding: 2% 0;
+    margin: 0.5% 0;
+	color: #ff9900;
+}
+
+.card__article{
+    padding: 0 5% 10px 5%;
+	margin-bottom: 1%;
+    text-indent: 5%;
+    text-align: justify;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.card__pic{
+    width: 100%;
+}

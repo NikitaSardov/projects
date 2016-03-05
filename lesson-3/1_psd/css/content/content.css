@@ -1,0 +1,38 @@
+﻿.content {
+	position: relative;
+	width: 720px;
+	margin: 0 auto;
+}
+
+.content__p {
+	font-size: 24px;
+	text-align: left;
+	line-height: 2;
+}
+
+.content__cite {
+	font-size: 32px;
+	text-align: center;
+	font-style: italic;
+}
+
+.content__list {
+	list-style-position: inside;
+}
+
+.content_backToTop {
+	margin: 0;
+}
+
+.content__backToTopButton {
+	display: inline-block;
+	padding-top: 20px;
+	line-height: 1.5;
+	text-align: center;
+	height: 100px;	
+	width: 100%;
+	font-family: OpenSans, Arial, sans-serif;
+	font-size: 20px;
+	text-decoration: none;
+	color: #a3a3a3;
+}

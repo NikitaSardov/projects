@@ -1,0 +1,51 @@
+.nextReading{
+	width: auto;
+	position: relative;
+	padding: 0 auto;
+	margin: 0 auto;
+}
+
+.nextReading__element1 {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	width: 50%;
+}
+
+.nextReading__element2 {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	width: 50%;
+}
+
+.nextReading__image {
+	width: 100%;
+	margin-bottom: -5%; /* убрал непонятную полосу в самом низу страницы */	
+}
+
+/* текст внутри элементов */
+.nextReading__text {
+	position: absolute;
+	top: 0;
+	padding: 70px;
+	color: #fff;	
+}
+
+.nextReading__header {
+	font-family: OpenSans, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+.nextReading__title {
+	font-size: 34px;
+	margin-bottom: 5px;
+}
+
+.nextReading__headline {
+	font-style: italic;
+	font-size: 26px;
+	margin: 0;
+}

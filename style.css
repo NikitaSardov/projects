@@ -1,0 +1,116 @@
+body {
+    background-image: url();
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: verdana, sans-serif;
+}
+
+::selection {
+    color: #ccffff;
+    background: #66cc33;
+}
+
+.author{
+    position: fixed;
+    width: 15%;
+    height: auto;
+    left: 3%;
+    top: 10px;
+}
+
+.author__photo{
+    position: fixed;
+    width: 15%;
+    height: auto;
+    left: 3%;
+    top: 10px;
+    border-radius: 50% 50%;
+    -webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+}
+
+.author__photo:hover {
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	-ms-filter: grayscale(0%);
+	-o-filter: grayscale(0%);
+	filter: grayscale(0%);
+	filter: none;
+	transform: scale(1.2);
+	transform: translate(5%, 5%);
+}
+
+.card{
+    position:relative;
+    width:55%;
+    margin: 0 auto;
+    padding: 0;
+    text-align:center;
+    background-color: #333333;
+	  opacity: 0.9;
+}
+
+.title{
+    width:100%;
+    background-color: #666666;
+    padding: 20px 0;
+    margin: 5px 0;
+    color: #ff9900;
+}
+
+.pic{
+    width: 100%;
+}
+
+.article{
+    padding: 0 5% 10px 5%;
+    text-indent: 5%;
+    text-align: left;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    font-size: small;
+    text-align: center;
+    color: #66cc33;
+}
+
+.but{
+    display: inline-block;
+    padding: 0 1% 0;
+}
+
+.highLightGreen:hover {
+    background-color: #66cc33;
+    color: #ccffff;
+}
+
+.highLightYellow:hover {
+
+    background-color: #ff9900;
+    color: #000000;
+}
+
+a:link, :visited, strong {
+    color: #ccffff;
+}
+
+tr, td, th{
+    padding: 3px 5px;
+    border: 1px solid #333333;
+}
+
+.myTable tr:hover{
+    background-color: #66cc33;
+    cursor: pointer;
+}
