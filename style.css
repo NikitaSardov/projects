@@ -34,14 +34,25 @@ body {
 }
 
 .author__photo:hover {
+	animation-name: author__photo--Scale;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 2;
+	animation-fill-mode: forwards;
+	Animation-direction: alternate;
+}
+
+@keyframes author__photo--Scale{
+	100% {
 	-webkit-filter: grayscale(0%);
 	-moz-filter: grayscale(0%);
 	-ms-filter: grayscale(0%);
 	-o-filter: grayscale(0%);
 	filter: grayscale(0%);
 	filter: none;
-	transform: scale(1.2);
-	transform: translate(5%, 5%);
+	transform: scale(1.1);
+	transform: translate(1%, 1%);
+	}
 }
 
 .card{
