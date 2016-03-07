@@ -1,5 +1,5 @@
 body {
-    background-image: url();
+    background-image: url(img/bg.jpg);
     background-size: cover;
     background-attachment: fixed;
     font-family: verdana, sans-serif;
@@ -10,27 +10,19 @@ body {
     background: #66cc33;
 }
 
-.author{
-    position: fixed;
-    width: 15%;
-    height: auto;
-    left: 3%;
-    top: 10px;
-}
-
 .author__photo{
     position: fixed;
-    width: 15%;
+    width: 10%;
     height: auto;
-    left: 3%;
-    top: 10px;
+    left: 6%;
+    top: 4%;
     border-radius: 50% 50%;
-    -webkit-filter: grayscale(100%);
+    /*-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
 	-o-filter: grayscale(100%);
 	filter: grayscale(100%);
-	filter: gray;
+	filter: gray;*/
 }
 
 .author__photo:hover {
@@ -38,20 +30,19 @@ body {
 	animation-duration: 1s;
 	animation-timing-function: ease-out;
 	animation-iteration-count: 2;
-	animation-fill-mode: forwards;
+	/*animation-fill-mode: forwards;*/
 	Animation-direction: alternate;
 }
 
 @keyframes author__photo--Scale{
 	100% {
-	-webkit-filter: grayscale(0%);
+	/*-webkit-filter: grayscale(0%);
 	-moz-filter: grayscale(0%);
 	-ms-filter: grayscale(0%);
 	-o-filter: grayscale(0%);
 	filter: grayscale(0%);
-	filter: none;
-	transform: scale(1.1);
-	transform: translate(1%, 1%);
+	filter: none;*/
+	transform: scale(1.5) translate(0%, 10%);
 	}
 }
 
@@ -61,20 +52,58 @@ body {
     margin: 0 auto;
     padding: 0;
     text-align:center;
-    background-color: #333333;
-	  opacity: 0.9;
+    background-color: #333;
+	opacity: 0.9;
+}
+
+.myCard{
+    position: fixed;
+	top: 30%;
+	left: 1%;
+    width:20%;
+    margin: 0 auto;
+    padding: 0;
+    text-align:center;
+    background-color: #333;
+	color: #cccccc;
+	opacity: 0.9;
 }
 
 .title{
     width:100%;
-    background-color: #666666;
+    background-color: #666;
     padding: 20px 0;
     margin: 5px 0;
     color: #ff9900;
+	text-align: center;
+}
+
+.date{
+	width:100%;
+    background-color: #666;
+    padding: 5px 0;
+    margin: 5px 0;
+    color: #ff9900;;
+}
+
+.symbol {
+	margin: 0 10px -5px 0;
+	width: 30px;
+	height: 30px;
+	text-align:right;
+}
+
+.authorPhoto {
+	border-radius: 50%;
 }
 
 .pic{
     width: 100%;
+}
+
+.nav{
+	text-indent: 10px;
+	padding: 5px 5px;
 }
 
 .article{
@@ -83,6 +112,20 @@ body {
     text-align: left;
     color: #cccccc;
     line-height: 1.5;
+}
+
+.projects{
+	position: fixed;
+	padding: 0 0;
+    margin: 0 0;
+	top: 0;
+	right: 0;
+	width: 20%;
+    text-align: left;
+    color: #cccccc;
+    line-height: 1.5;
+    background-color: #333;
+	opacity: 0.9;
 }
 
 .footer{
@@ -114,14 +157,4 @@ body {
 
 a:link, :visited, strong {
     color: #ccffff;
-}
-
-tr, td, th{
-    padding: 3px 5px;
-    border: 1px solid #333333;
-}
-
-.myTable tr:hover{
-    background-color: #66cc33;
-    cursor: pointer;
 }
