@@ -36,3 +36,31 @@
 	text-decoration: none;
 	color: #a3a3a3;
 }
+
+.content__lineNumbers {
+	position: absolute;
+	left: 200px;
+}
+
+.content__lineNumber1 {
+	top: 676px;
+}
+
+.content__lineNumber5{
+	top: 840px;
+}
+.content__lineNumber10 {
+	top: 140%;
+}
+.content__lineNumber15 {
+	top: 160%;
+}
+.content__lineNumber20 {
+	top: 180%;
+}
+.content__lineNumber25 {
+	top: 190%;
+}
+.content__lineNumber30 {
+	top: 200%;
+}
