@@ -1,7 +1,6 @@
 .nextReading{
 	width: auto;
 	position: relative;
-	padding: 0 auto;
 	margin: 0 auto;
 }
 
@@ -14,7 +13,8 @@
 
 .nextReading__image {
 	width: 100%;
-	margin-bottom: -5%; /* убрал непонятную полосу в самом низу страницы */	
+	opacity: 0.8;
+	margin-bottom: -5%;  /*убрал непонятную полосу в самом низу страницы */	
 }
 
 /* текст внутри элементов */
@@ -22,7 +22,7 @@
 	position: absolute;
 	display: inline;
 	top: 0;
-	padding: 70px;
+	padding: 50px 60px;
 	color: #fff;	
 }
 
@@ -32,19 +32,39 @@
 }
 
 .nextReading__header {
-	font-family: OpenSans, Arial, sans-serif;
+	font-family: 'Open Sans Bold', Arial, sans-serif;
 	font-weight: bold;
 	font-size: 14px;
 	margin-bottom: 25px;
 }
 
 .nextReading__title {
-	font-size: 34px;
-	margin-bottom: 5px;
+	font-size: 32px;
+	margin: 42px 0 0 10px;
+	font-family: 'Gentium Book Basic', serif;
 }
 
 .nextReading__headline {
+	font-family: 'Gentium Book Basic Italic', serif;
 	font-style: italic;
 	font-size: 26px;
-	margin: 0;
+	margin:  8px 0 0 10px;
+}
+
+.nextReading__header:hover, .nextReading__title:hover, .nextReading__headline:hover {
+	animation-name: textIndent;
+	animation-duration: 0.1s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes textIndent {
+	100%{
+		text-indent: 10px;
+	}
+}
+
+.nextReading__image:hover {
+	opacity: 1;
 }

@@ -6,7 +6,7 @@ body {
 }
 
 /* растягиваем картинку на все окно браузера */
-/
+
 /*html, body {
 	height: 100%;
 }  если делать как в макете, то первая картинка по высоте больше экрана, поэтому, не будем равняться на размеры экрана*/
@@ -14,59 +14,69 @@ body {
 .firstScreen {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 .firstScreen__image {
     width: 100%;
-    height: 100%;
+    height: 720px;
 	background-size: cover;
 }
 
 /* textContainer с position: absolute располагаем поверх картинки */
 .firstScreen__textContainer {
 	position: absolute;
-	bottom: -46px;
+	top: 516px;
 	width: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 /* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
 .firstScreen__text {
 	position: relative;
 	width: 656px;
+	padding: 0;
 	margin: 0 auto;
 }
 
 .firstScreen__title {
-	font-weight: bold;
-	font-size: 60px;
-	margin-bottom: 20px;
+	/*font-weight: bold;*/
+	font-family: 'Gentium Book Basic', serif;
+	font-size: 56px;
+	margin: 0;
+	padding: 0;
 	color: #fff;
 }
 
 .firstScreen__headline {
 	font-style: italic;
 	font-family: 'Gentium Book Basic Italic', serif;
-	font-size: 28px;
-	margin: 10px 0;
+	font-size: 26px;
+	margin: 0;
+	padding: 0;
 	color: #d7d7d7;
 }
 
 .firstScreen__line {
-	 size: 1px;
-	 color: #d7d7d7;
+	size: 1px;
+	background-color: violet;
+	color: #d7d7d7;
 }
 .firstScreen__writtenBy {
 	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 14px;
-	margin: 25px 0 0;
+	font-size: 13px;
+	padding-top: 12px;
+	margin: 0;
 	color: #d7d7d7;
 }
 
 .firstScreen__author {
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-weight: bold;
-	font-size: 14px;
-	margin: 5px auto 25px;
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
 	color: #fff;
 }
 
@@ -75,8 +85,8 @@ body {
 	margin-left: 5px;
 	vertical-align: -5px;
 	border-radius: 50%;
-	width: 30px;
-	height: 30px;
+	width: 28px;
+	height: 28px;
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
@@ -85,17 +95,38 @@ body {
 	filter: gray;
 }
 
+.firstScreen__authorPhoto:hover {
+	animation-name: symbolHover;
+	animation-duration: .5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+}
+
+@keyframes symbolHover {
+	100%{
+		transform: scale(1.4);
+	}
+}
+
 /* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
 .firstScreen__socialContainer {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 }
 
 .socialSymbol {
-	margin: -10px 0 0 20px;
-	width: 15px;
-	height: 15px;
+	margin: -10px -3px 0 20px;
+	width: 12px;
+	height: 12px;
 	text-align:right;
 }
+
+.socialSymbol:hover {
+	animation-name: symbolHover;
+	animation-duration: .5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 2;
+	animation-direction: alternate;

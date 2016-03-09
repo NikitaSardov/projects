@@ -1,66 +1,94 @@
 ﻿.content {
 	position: relative;
-	width: 720px;
-	margin: 0 auto;
+	width: 665px;
+	font-family: 'Gentium Book Basic', serif;
+	margin: 20px auto;
+	padding-top: 0;
 }
 
 .content__p {
-	font-size: 24px;
+	position: relative;
+	margin: 0;
+	padding: 20px 0 14px 5px;
+	font-size: 20.5px;
 	text-align: left;
-	line-height: 2;
+	line-height: 1.85;
 }
 
 .content__cite {
-	font-size: 32px;
+	font-size: 26px;
 	text-align: center;
+	padding: 20px 0 22px;
+	margin: 0;
+	font-family: 'Gentium Book Basic Italic', serif;
 	font-style: italic;
 }
 
 .content__list {
 	list-style-position: inside;
-}
-
-.content_backToTop {
-	margin: 0;
+	margin: 0 0 0 30px;
+	padding: 5px 0px 22px 0;
 }
 
 .content__backToTopButton {
 	display: inline-block;
-	padding-top: 20px;
+	margin: -4px 0 0;
+	letter-spacing: 2px;
+	box-shadow: inset 16px 0px 15px -17px #ccc,
+				inset -16px 0px 15px -17px #ccc,
+				inset 0px -16px 15px -10px #ccc;
 	line-height: 1.5;
 	text-align: center;
-	height: 100px;	
+	height: 70px;
 	width: 100%;
-	font-family: OpenSans, Arial, sans-serif;
-	font-size: 20px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 12px;
 	text-decoration: none;
 	color: #a3a3a3;
 }
 
+.content__backToTopButton:hover {
+	animation-name: content__backToTopButton--hover;
+	animation-duration: 2s;
+	animation-timing-function: normal;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes content__backToTopButton--hover {
+	100%{
+		transform: translate(0, -4%);
+		box-shadow: inset 25px 0px 50px 0px #eee,
+					inset -25px 0px 50px 0px #eee,
+					inset 0px -20px 50px 0px #eee;
+		color: black;
+	}
+}
+
 .content__lineNumbers {
 	position: absolute;
-	left: 200px;
-}
 
+	left: -85px;
+}
+	/*в макете строки пронумерованы как-то странно, возможно это нужно проверить*/
 .content__lineNumber1 {
-	top: 676px;
+	top: -2px;
 }
-
 .content__lineNumber5{
-	top: 840px;
+	top: 158px;
 }
 .content__lineNumber10 {
-	top: 140%;
+	top: 415px;
 }
 .content__lineNumber15 {
-	top: 160%;
+	top: 639px;
 }
 .content__lineNumber20 {
-	top: 180%;
+	top: 870px;
 }
 .content__lineNumber25 {
-	top: 190%;
+	top: 1056px; /*1094px для "правильной" нумерации*/
 }
 .content__lineNumber30 {
-	top: 200%;
+	top: 1278px; /*1316px для "правильной" нумерации*/
 }
