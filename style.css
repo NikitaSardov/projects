@@ -10,6 +10,11 @@ body {
     background: #66cc33;
 }
 
+.videoNoBorders {
+	border: none;
+	width: 100%;
+}
+
 .author__photo{
     position: fixed;
     width: 10%;
