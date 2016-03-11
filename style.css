@@ -43,7 +43,7 @@ body {
 .myCard{
     position: fixed;
 	top: 30%;
-	left: 1%;
+	left: .5%;
     width:20%;
     margin: 0 auto;
     padding: 0;
@@ -76,7 +76,7 @@ body {
 	width: 20%;
 	height: 100%;
     text-align: left;
-    color: #cccccc;
+    color: #ccc;
     line-height: 1.5;
     background-color: #333;
 	opacity: 0.9;
