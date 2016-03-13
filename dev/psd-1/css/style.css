@@ -1,4 +1,4 @@
-@import url(default/default.css) all;
-@import url(content/content.css) all;
-@import url(footer/footer.css) all;
-@import url(nextreading/nextreading.css) all;
+@import url(default/default.less) all;
+@import url(content/content.less) all;
+@import url(footer/footer.less) all;
+@import url(nextreading/nextreading.less) all;
