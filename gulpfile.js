@@ -6,9 +6,11 @@
 	reload      = browserSync.reload;
 	concat = require('gulp-concat');*/
 var gulp        = require('gulp');
-    pngquant = require('imagemin-pngquant');
 	gulpLoadPlugins = require('gulp-load-plugins');
 	plugins = gulpLoadPlugins();
+    pngquant = require('imagemin-pngquant');
+	browserSync = require('browser-sync');
+	reload  = browserSync.reload;
 	html = {
 		cosmos:['dev/cosmos/index.html'],
 		psd_1:['dev/psd-1/index.html']
@@ -28,13 +30,13 @@ var gulp        = require('gulp');
 gulp.task('html_cosmos', function(){
   return gulp.src(html.cosmos)
     .pipe(gulp.dest('build/cosmos'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('cosmos HTML built! Check new files'));
 });
 gulp.task('html_psd_1', function(){
   return gulp.src(html.psd_1)
     .pipe(gulp.dest('build/psd-1'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 HTML built! Check new files'));
 });
 
@@ -51,7 +53,7 @@ gulp.task('css_cosmos', function(){
     .pipe(plugins.minifyCss())
 	.pipe(plugins.concat('css/style.css'))
     .pipe(gulp.dest('build/cosmos'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('cosmos CSS built! Check new files'));
 });
 
@@ -66,7 +68,7 @@ gulp.task('css_psd_1', function(){
     .pipe(plugins.minifyCss())
 	.pipe(plugins.concat('css/style.css'))
     .pipe(gulp.dest('build/psd-1'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 CSS built! Check new files'));
 });
 
@@ -83,7 +85,7 @@ gulp.task('img_cosmos', function(){
 		interlaced: true
 	}))
     .pipe(gulp.dest('build/cosmos/img'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('cosmos IMG built! Check new files'));
 });
 
@@ -96,8 +98,19 @@ gulp.task('img_psd_1', function(){
 		interlaced: true
 	}))
     .pipe(gulp.dest('build/psd-1/img'))
-    /*.pipe(reload({stream:true}))*/
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 IMG built! Check new files'));
+});
+
+gulp.task('browserSync', function() {
+  browserSync({
+    server: {
+      baseDir: "./build/psd-1"
+    },
+    port: 8080,
+    open: true,
+    notify: true
+  });
 });
 
 gulp.task('watcher', function(){
@@ -110,7 +123,7 @@ gulp.task('watcher', function(){
 });
 
 
-gulp.task('default', ['html_cosmos', 'html_psd_1', 'css_cosmos', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher']); 
+gulp.task('default', [/*'html_cosmos', 'html_psd_1', 'css_cosmos', 'css_psd_1', 'img_cosmos', 'img_psd_1',*/ 'watcher', 'browserSync']); 
 
 /*
 // ////////////////////////////////////////////////
@@ -121,18 +134,9 @@ gulp.task('html', function(){
   .pipe(reload({stream:true}))
   .pipe(notify('HTML built! Browser refreshed'));
 });
+*/
+
 
 // ////////////////////////////////////////////////
 // Browser-Sync
 // // /////////////////////////////////////////////
-gulp.task('browserSync', function() {
-  browserSync({
-    server: {
-      baseDir: "./"
-    },
-    port: 8080,
-    open: true,
-    notify: true
-  });
-});
-*/
