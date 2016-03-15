@@ -17,7 +17,8 @@ var gulp        = require('gulp');
 	};
 	css	= {
 		cosmos:['dev/cosmos/**/*.*ss'],
-		psd_1:['dev/psd-1/**/*.*ss']
+		psd_1:['dev/psd-1/**/*.*ss', '!./dev/psd-1/css/firstscreen.less'],
+		firstScreen_psd_1: ['dev/psd-1/css/firstscreen/firstscreen.less']
 	};
 	img	= {
 		cosmos:['dev/cosmos/img/*.*'],
@@ -57,6 +58,18 @@ gulp.task('css_cosmos', function(){
 	.pipe(plugins.notify('cosmos CSS built! Check new files'));
 });
 
+gulp.task('firstScreen_psd_1', function(){
+  return gulp.src(css.firstScreen_psd_1)
+	.pipe(plugins.less())
+	.pipe(plugins.autoprefixer({
+		browsers: ['last 2 version'],
+		cascade: false
+	}))
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest('build/psd-1/css'))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('psd-1 CSS for firstScreen built! Check new files'));
+});
 
 gulp.task('css_psd_1', function(){
   return gulp.src(css.psd_1)
@@ -118,12 +131,13 @@ gulp.task('watcher', function(){
   gulp.watch(html.psd_1, ['html_psd_1']);
   gulp.watch(css.cosmos, ['css_cosmos']);
   gulp.watch(css.psd_1, ['css_psd_1']);
+  gulp.watch(css.firstScreen_psd_1, ['firstScreen_psd_1']);
   gulp.watch(img.cosmos, ['img_cosmos']);
   gulp.watch(img.psd_1, ['img_psd_1']);
 });
 
 
-gulp.task('default', [/*'html_cosmos', 'html_psd_1', 'css_cosmos', 'css_psd_1', 'img_cosmos', 'img_psd_1',*/ 'watcher', 'browserSync']); 
+gulp.task('default', ['html_cosmos', 'html_psd_1', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', 'browserSync']); 
 
 /*
 // ////////////////////////////////////////////////
