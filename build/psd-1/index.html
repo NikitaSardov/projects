@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic" rel="stylesheet" type="text/css" />
 		<link href="css/firstscreen.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
         <title>Awesome title</title>
     </head>
     <body>
@@ -50,27 +51,139 @@
 		<div class="share">
 			<a class="share__button" href="http://vk.com/write20537868" target="_blank"><img src="img/shareButtonSymbol.png" height="11" alt="Share this article" /> SHARE THIS ARTICLE</a>
 		</div>	
-		<div class="nextReading">
-			<div class="nextReading__element">   
-				<a href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank"><img class="nextReading__image" src="img/nextreading1.jpg" alt="Next article: Seaside, no thanks..." /></a>
-				<div class="nextReading__text">
-					<a class="nextReading__a" href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank">
-						<p class="nextReading__header">NEXT IN YOUR READING LIST...</p>
-						<p class="nextReading__title">Seaside, no thanks...</p>
-						<p class="nextReading__headline">This is an awesome headline</p>
-					</a>
-				</div>
-			</div><div class="nextReading__element">
-				<a href="http://setiathome.berkeley.edu" target="_blank"><img class="nextReading__image" src="img/nextreading2.jpg" alt="Next article: Roma, bella vita..." /></a>
-				<div class="nextReading__text">
-					<a class="nextReading__a" href="http://setiathome.berkeley.edu" target="_blank">
-						<p class="nextReading__header">NEXT IN YOUR READING LIST...</p>
-						<p class="nextReading__title">Roma, bella vita...</p>
-						<p class="nextReading__headline">This is an awesome headline</p>
-					</a>
-				</div>
+		<div class="footer">
+			<div class="footer__element1">   
+				<!--a href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank"--><img class="footer__image" src="img/footer__image1.jpg" alt="Next article: Seaside, no thanks..." /><!--/a-->
+				<a class="footer__text" href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank">
+					<!--p class="footer__header">NEXT IN YOUR READING LIST...</p>
+					<p class="footer__title">Seaside, no thanks...</p>
+					<p class="footer__headline">This is an awesome headline</p-->
+				</a>
+			</div><div class="footer__element2">
+				<!--a href="http://setiathome.berkeley.edu" target="_blank"--><img class="footer__image" src="img/footer__image2.jpg" alt="Next article: Roma, bella vita..." /><!--/a-->
+				<a class="footer__text" href="http://setiathome.berkeley.edu" target="_blank">
+					<!--p class="footer__header">NEXT IN YOUR READING LIST...</p>
+					<p class="footer__title">Roma, bella vita...</p>
+					<p class="footer__headline">This is an awesome headline</p-->
+				</a>
 			</div>
 		</div>
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		
+		<!--пока остается маленький косячишко
+		<div class="footer">   
+			<a class="footer__text footer__image1" href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank">
+				<p class="footer__header">NEXT IN YOUR READING LIST...</p>
+				<p class="footer__title">Seaside, no thanks...</p>
+				<p class="footer__headline">This is an awesome headline</p>
+			</a><a class="footer__text footer__image2" href="http://setiathome.berkeley.edu" target="_blank">
+				<p class="footer__header">NEXT IN YOUR READING LIST...</p>
+				<p class="footer__title">Roma, bella vita...</p>
+				<p class="footer__headline">This is an awesome headline</p>
+			</a>
+		</div>		
+		
+		CSS:
+		
+.footer{
+	display: block;
+	width: 100%;
+	position: relative;
+	background-color: green;
+	margin: 0;
+	
+	&__text {
+		/* display: inline-block; */
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 0;
+		margin: 0;
+		width: 40%;
+			/* top: 0; */
+		padding: 50px 60px;
+		color: @color- -white;	
+		text-decoration: none;
+		
+	}
+
+	&__image1 {
+		background-image: url(../img/footer__image1.jpg);
+		/* background-position: right; */
+		 float: left;
+	}
+	
+	&__image2 {
+		background-image: url(../img/footer__image2.jpg);
+		/* background-position: right; */
+		 float: right;
+	}
+	
+	/* 
+	&__element2 {
+		display: inline-block;
+		height: 400px;
+		background-image: url('../img/footer__image2.jpg');
+		background-size: cover;
+		padding: 0;
+		margin: 0;
+		width: 50%;
+	} */
+/* 
+	&__image {
+		width: 100%;
+		opacity: 0.8;
+		margin-bottom: -5%;  /*убрал непонятную полосу в самом низу страницы */	
+	
+
+	/* текст внутри элементов */
+	/* &__text {
+		position: absolute;
+		display: inline;
+		top: 0;
+		padding: 50px 60px;
+		color: @color- -white;	
+	} */
+
+	&__header {
+		font-family: @sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 25px;
+	}
+
+	&__title {
+		font-size: 32px;
+		margin: 42px 0 0 10px;
+		font-family: @serif;
+	}
+
+	&__headline {
+		font-family: @serif- -italic;
+		font-style: italic;
+		font-size: 26px;
+		margin:  8px 0 0 10px;
+	}
+
+	&__header:hover, &__title:hover, &__headline:hover {
+		
+		animation-name: textIndent;
+		animation-duration: 0.1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes textIndent {
+		100%{
+			text-indent: 10px;
+		}
+	}
+
+	&__image:hover {
+		opacity: 1;
+	}
+}
+
+		-->
+		
     </body>
 </html>

@@ -1,29 +1,31 @@
+@color--yellow: #6c3;
+@link--color: #cff;
+
 .table{
     position: relative;
     margin: 0 auto 20px auto;
     text-align: center;
-    background-color: #cccccc;
-    color: #333333;
+    background-color: #ccc;
+    color: #333;
     border: hidden;
     border-collapse: collapse;
 }
 
 tr, td, th{
     padding: 3px 5px;
-    border: 1px solid #333333;
+    border: 1px solid #333;
+	transition: background-color;
 }
 
-.table--highLight :hover{
+
+.tr:hover{
     cursor: pointer;
-	animation-name: row--highLight;
-	animation-duration: 1s;
-	animation-timing-function: ease-out;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+	transition-duration: 1s;
+	background-color: @color--yellow;
 }
 
-@keyframes row--highLight{
-	100% {
-	background-color: #66cc33;
-	}
+
+.highLight--Green:hover  {
+    background-color: @color--yellow;
+    color: @link--color;
 }

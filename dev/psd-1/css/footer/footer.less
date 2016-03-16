@@ -1,70 +1,90 @@
-.nextReading{
-	width: auto;
+@serif: 'Gentium Book Basic', serif;
+@serif--italic: 'Gentium Book Basic Italic', serif;
+@sans-serif: 'Open Sans', Arial, sans-serif;
+@color--gray: #d7d7d7;
+@color--white: #fff;
+
+.footer{
+	width: 100%;
 	position: relative;
 	margin: 0 auto;
-}
 
-.nextReading__element {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-	width: 50%;
-}
-
-.nextReading__image {
-	width: 100%;
-	opacity: 0.8;
-	margin-bottom: -5%;  /*убрал непонятную полосу в самом низу страницы */	
-}
-
-/* текст внутри элементов */
-.nextReading__text {
-	position: absolute;
-	display: inline;
-	top: 0;
-	padding: 50px 60px;
-	color: #fff;	
-}
-
-.nextReading__a {
-	color: #fff;	
-	text-decoration: none;
-}
-
-.nextReading__header {
-	font-family: 'Open Sans Bold', Arial, sans-serif;
-	font-weight: bold;
-	font-size: 14px;
-	margin-bottom: 25px;
-}
-
-.nextReading__title {
-	font-size: 32px;
-	margin: 42px 0 0 10px;
-	font-family: 'Gentium Book Basic', serif;
-}
-
-.nextReading__headline {
-	font-family: 'Gentium Book Basic Italic', serif;
-	font-style: italic;
-	font-size: 26px;
-	margin:  8px 0 0 10px;
-}
-
-.nextReading__header:hover, .nextReading__title:hover, .nextReading__headline:hover {
-	animation-name: textIndent;
-	animation-duration: 0.1s;
-	animation-timing-function: ease-in;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-@keyframes textIndent {
-	100%{
-		text-indent: 10px;
+	&__element1 {
+		display: block;
+		float: left;
+		padding: 0;
+		margin: 0;
+		width: 50%;
+		background-color: yellow;
 	}
-}
 
-.nextReading__image:hover {
-	opacity: 1;
+	&__element2 {
+		display: block;
+		 float: right;
+		padding: 0;
+		margin: 0;
+		width: 50%;
+		background-color: tomato;
+	}
+
+	&__image {
+		width: 100%;
+		opacity: .5;
+		/* padding: 10px;
+		margine: 10px; */
+		overflow: hidden;
+	 	margin-bottom: 0;  /*убрал непонятную полосу в самом низу страницы */	
+	}
+
+	/* текст внутри элементов */
+	&__text {
+		position: absolute;
+		/* display: inline; */
+		top: 0;
+		padding: 50px 60px;
+		color: @color--white;	
+		text-decoration: none;
+		background-color: green;
+	/* background-image: url(../img/footer__image2.jpg);
+	background-size: contain; */
+	}
+
+	&__header {
+		font-family: @sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 25px;
+	}
+
+	&__title {
+		font-size: 32px;
+		margin: 42px 0 0 10px;
+		font-family: @serif;
+	}
+
+	&__headline {
+		font-family: @serif--italic;
+		font-style: italic;
+		font-size: 26px;
+		margin:  8px 0 0 10px;
+	}
+
+	&__header:hover, &__title:hover, &__headline:hover {
+		
+		animation-name: textIndent;
+		animation-duration: 0.1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes textIndent {
+		100%{
+			text-indent: 10px;
+		}
+	}
+
+	&__image:hover {
+		opacity: 1;
+	}
 }

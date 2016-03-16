@@ -1,4 +1,8 @@
 @logobg__address: '../img/logo__bg.jpg';
+@color--yellow: #6c3;
+@link--color: #cff;
+@darkText--color: #000;
+@darkBg--color: #000;
 
 .header{
     position: absolute;
@@ -6,35 +10,51 @@
     left: 0;
 	width: 100%;
 	height: auto;
-	background-color: #000000;
+	background-color: @darkBg--color;
 	font-size: small;
     text-align: center;
-    color: #66cc33;
+    color: @color--yellow;
+	&__button{
+		display: inline-block;
+		padding: 1% 1% 1%;
+		margin: 1% 0 1%;
+		background-color: @color--yellow;
+		color: @link--color;
+	}
+
+	&__logo {
+		position: fixed;
+		width: 15%;
+		left: 4%;
+		top: 1px;
+		border: 2px solid transparent;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&__logo:hover {
+		background-image: url(@logobg__address);
+		background-size: cover;
+		border-color: #ff9900;
+		border-radius: 20px;
+	}
 }
 
-.header__button{
-	display: inline-block;
-	padding: 1% 1% 1%;
-	margin: 1% 0 1%;
-	background-color: #66cc33;
-    color: #ccffff;
+
+.highLight--GreenAnimate:hover {
+    background-color: @color--yellow;
+    color: @link--color;
+	animation-name: highLight--Green;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
-.header__logo {
-    position: fixed;
-    width: 15%;
-    left: 4%;
-    top: 1px;
-    border: 2px solid transparent;
-}
-
-.header:hover {
-	opacity: 1;
-}
-
-.header__logo:hover {
-    background-image: url(@logobg__address);
-    background-size: cover;
-	border-color: #ff9900;
-	border-radius: 20px;
+@keyframes highLight--Green{
+	100% {
+	background-color: #ff9900;
+	}
 }

@@ -1,12 +1,36 @@
-@bg__address: '../img/bg.jpg';
+@bg__image: '../img/bg.jpg';
+@color--yellow: #6c3;
+@link--color: #cff;
 
 #body {
-    background-image: url(@bg__address);
+    background-image: url(@bg__image);
     background-size: cover;
     background-attachment: fixed;
     font-family: verdana, sans-serif;
 }
 
 a:link, :visited, strong {
-    color: #ccffff;
+    color: @link--color;
+}
+
+::selection {
+    color: @link--color;
+    background: @color--yellow;
+}
+
+.highLight--Yellow:hover {
+    background-color: #f90;
+    color: #000;
+	border-color: #f90;
+	animation-name: highLight--Yellow;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes highLight--Yellow{
+	100% {
+	background-color: @color--yellow;
+	}
 }

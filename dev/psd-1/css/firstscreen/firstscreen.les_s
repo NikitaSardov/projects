@@ -2,6 +2,7 @@
 @serif--italic: 'Gentium Book Basic Italic', serif;
 @sans-serif: 'Open Sans', Arial, sans-serif;
 @color--gray: #d7d7d7;
+@color--white: #fff;
 
 /*настройки для body и первого экрана (firstScreen)*/
 body {
@@ -10,8 +11,8 @@ body {
 }
 
 /* растягиваем картинку на все окно браузера */
-
-/*html, body {
+/*
+html, body {
 	height: 100%;
 }  если делать как в макете, то первая картинка по высоте больше экрана, поэтому, не будем равняться на размеры экрана*/
 
@@ -38,7 +39,7 @@ body {
 	/* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
 	&__text {
 		position: relative;
-		padding: 0;
+		padding: 0;		
 		margin: 0 auto;
 		width: 656px;
 	}
@@ -49,12 +50,12 @@ body {
 		font-size: 56px;
 		margin: 0;
 		padding: 0;
-		color: #fff;
+		color: @color--white;
 	}
 	
 	&__headline {
-		font-style: italic;
 		font-family: @serif--italic;
+		font-style: italic;
 		font-size: 26px;
 		margin: 0;
 		padding: 0;
@@ -80,24 +81,18 @@ body {
 		font-size: 15px;
 		padding: 0;
 		margin: 0;
-		color: #fff;
+		color: @color--white;
 	}
 
 	&__authorPhoto {
-		margin-top: -10px;
-		margin-left: 5px;
+		margin: -10px 0 0 5px;
 		vertical-align: -5px;
 		border-radius: 50%;
 		width: 28px;
 		height: 28px;
 		transition-property: transform;
 		transition-duration: .5s;
-		-webkit-filter: grayscale(100%);
-		-moz-filter: grayscale(100%);
-		-ms-filter: grayscale(100%);
-		-o-filter: grayscale(100%);
 		filter: grayscale(100%);
-		filter: gray;
 	}
 
 	/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */

@@ -17,8 +17,9 @@ var gulp        = require('gulp');
 	};
 	css	= {
 		cosmos:['dev/cosmos/**/*.*ss'],
-		psd_1:['dev/psd-1/**/*.*ss', '!./dev/psd-1/css/firstscreen.less'],
-		firstScreen_psd_1: ['dev/psd-1/css/firstscreen/firstscreen.less']
+		firstScreen_cosmos: ['dev/cosmos/css/firstscreen/firstscreen.les_s'],
+		psd_1:['dev/psd-1/**/*.*ss'],
+		firstScreen_psd_1: ['dev/psd-1/css/firstscreen/firstscreen.les_s']
 	};
 	img	= {
 		cosmos:['dev/cosmos/img/*.*'],
@@ -44,6 +45,19 @@ gulp.task('html_psd_1', function(){
 //////////////	
 // LESS+CSS //
 //////////////
+gulp.task('firstScreen_cosmos', function(){
+  return gulp.src(css.firstScreen_cosmos)
+	.pipe(plugins.less())
+	.pipe(plugins.autoprefixer({
+		browsers: ['last 2 version'],
+		cascade: false
+	}))
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest('build/cosmos/css'))
+    // .pipe(reload({stream:true}))
+	.pipe(plugins.notify('cosmos CSS for firstScreen built! Check new files'));
+});
+
 gulp.task('css_cosmos', function(){
   return gulp.src(css.cosmos)
 	.pipe(plugins.less())
@@ -114,7 +128,29 @@ gulp.task('img_psd_1', function(){
     // .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 IMG built! Check new files'));
 });
-/* 
+
+gulp.task('bsync_cosmos', function() {
+  browserSync({
+    server: {
+      baseDir: "./build/cosmos"
+    },
+    port: 8080,
+    open: true,
+    notify: true
+  });
+});
+
+gulp.task('bsync_psd_1', function() {
+  browserSync({
+    server: {
+      baseDir: "./build/psd-1"
+    },
+    port: 8080,
+    open: true,
+    notify: true
+  });
+});
+/*
 gulp.task('browserSync', function() {
   browserSync({
     server: {
@@ -130,6 +166,7 @@ gulp.task('watcher', function(){
   gulp.watch(html.cosmos, ['html_cosmos']);
   gulp.watch(html.psd_1, ['html_psd_1']);
   gulp.watch(css.cosmos, ['css_cosmos']);
+  gulp.watch(css.firstScreen_cosmos, ['firstScreen_cosmos']);
   gulp.watch(css.psd_1, ['css_psd_1']);
   gulp.watch(css.firstScreen_psd_1, ['firstScreen_psd_1']);
   gulp.watch(img.cosmos, ['img_cosmos']);
@@ -137,7 +174,12 @@ gulp.task('watcher', function(){
 });
 
 
-gulp.task('default', ['html_cosmos', 'html_psd_1', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', /*'browserSync'*/]); 
+
+gulp.task('compile_cosmos', ['html_cosmos', 'firstScreen_cosmos', 'css_cosmos', 'img_cosmos']);
+
+gulp.task('compile_psd-1', ['html_psd_1', 'firstScreen_psd_1', 'css_psd_1', 'img_psd_1']);
+
+gulp.task('default', ['html_cosmos', 'html_psd_1', 'firstScreen_cosmos', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', /*'browserSync'*/]); 
 
 /*
 // ////////////////////////////////////////////////
