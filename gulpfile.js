@@ -60,13 +60,13 @@ gulp.task('firstScreen_cosmos', function(){
 
 gulp.task('css_cosmos', function(){
   return gulp.src(css.cosmos)
+	.pipe(plugins.concat('css/style.css'))
 	.pipe(plugins.less())
 	.pipe(plugins.autoprefixer({
 		browsers: ['last 2 version'],
 		cascade: false
 	}))
     .pipe(plugins.minifyCss())
-	.pipe(plugins.concat('css/style.css'))
     .pipe(gulp.dest('build/cosmos'))
     // .pipe(reload({stream:true}))
 	.pipe(plugins.notify('cosmos CSS built! Check new files'));
@@ -150,17 +150,17 @@ gulp.task('bsync_psd_1', function() {
     notify: true
   });
 });
-/*
+
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: "./build/psd-1"
+      baseDir: "./build/cosmos"
     },
     port: 8080,
     open: true,
     notify: true
   });
-}); */
+});
 
 gulp.task('watcher', function(){
   gulp.watch(html.cosmos, ['html_cosmos']);

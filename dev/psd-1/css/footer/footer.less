@@ -5,48 +5,79 @@
 @color--white: #fff;
 
 .footer{
+	/* display: block; */
 	width: 100%;
 	position: relative;
-	margin: 0 auto;
-
+	margin: 0;
+	padding: 0;
+	
+	&__text {
+		/* display: inline-block; */
+		padding: 0;
+		margin: 0;
+		/* width: 43%; */
+			/* top: 0; */
+		padding: 50px 60px;
+		color: @color--white;	
+		text-decoration: none;
+		
+	}
+	
 	&__element1 {
-		display: block;
-		float: left;
+		display: inline-block;
+		height: auto;
+		background-image: url('../img/footer__image1.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
 		padding: 0;
 		margin: 0;
+	background-color: green;
 		width: 50%;
-		background-color: yellow;
 	}
-
+	
 	&__element2 {
-		display: block;
-		 float: right;
+		display: inline-block;
+		height: 338px;
+		background-image: url('../img/footer__image2.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
 		padding: 0;
 		margin: 0;
 		width: 50%;
-		background-color: tomato;
 	}
-
+/*
+	&__image1 {
+		background-image: url(../img/footer__image1.jpg);
+				background-size: cover;
+		background-repeat: no-repeat;
+		width: 41%;
+		/* background-position: right; */
+		 /* float: left; 
+	}
+	
+	&__image2 {
+		background-image: url(../img/footer__image2.jpg);
+				background-size: cover;
+		background-repeat: no-repeat;
+		width: 41%;
+		 background-position: right;
+		 float: right;
+	}
+	*/
+/* 
 	&__image {
 		width: 100%;
-		opacity: .5;
-		/* padding: 10px;
-		margine: 10px; */
-		overflow: hidden;
-	 	margin-bottom: 0;  /*убрал непонятную полосу в самом низу страницы */	
-	}
+		opacity: 0.8;
+		margin-bottom: -5%;  /*убрал непонятную полосу в самом низу страницы */	
+	
 
 	/* текст внутри элементов */
 	&__text {
 		position: absolute;
-		/* display: inline; */
+		display: inline;
 		top: 0;
 		padding: 50px 60px;
 		color: @color--white;	
-		text-decoration: none;
-		background-color: green;
-	/* background-image: url(../img/footer__image2.jpg);
-	background-size: contain; */
 	}
 
 	&__header {

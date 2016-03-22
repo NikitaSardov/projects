@@ -4,6 +4,94 @@
 @color--gray: #d7d7d7;
 @color--white: #fff;
 
+@media screen and (max-width:479px) {
+	.content {
+	position: relative;
+	width: 665px;
+	font-family: @serif;
+	margin: 20px auto;
+	padding-top: 0;
+
+	&__p {
+		position: relative;
+		margin: 0;
+		padding: 20px 0 14px 5px;
+		font-size: 20.5px;
+		text-align: left;
+		line-height: 38px; /*1.85;*/
+	}
+
+	&__cite {
+		font-size: 26px;
+		text-align: center;
+		padding: 20px 0 22px;
+		margin: 0;
+		font-family: @serif--italic;
+		font-style: italic;
+	}
+
+	&__list {
+		list-style-position: inside;
+		margin: 0 0 0 30px;
+		padding: 5px 0px 22px 0;
+	}
+
+	&__backToTopButton {
+		display: inline-block;
+		margin: -4px 0 0;
+		letter-spacing: 2px;
+		box-shadow: inset 16px 0px 15px -17px #ccc,
+					inset -16px 0px 15px -17px #ccc,
+					inset 0px -16px 15px -10px #ccc;
+		line-height: 1.5;
+		text-align: center;
+		height: 70px;
+		width: 100%;
+		font-family: @sans-serif;
+		font-size: 12px;
+		text-decoration: none;
+		color: #a3a3a3;
+	}
+
+	&__backToTopButton:hover {
+		transform: translate(0, -4%);
+		box-shadow: inset 25px 0px 50px 0px #eee,
+					inset -25px 0px 50px 0px #eee,
+					inset 0px -20px 50px 0px #eee;
+		color: black;
+	}
+
+	&__lineNumbers {
+		display: none;
+	}
+		/*в макете строки пронумерованы как-то странно, возможно это нужно проверить*/
+	&__lineNumber1 {
+		top: -2px;
+	}
+	&__lineNumber5{
+		top: 158px;
+	}
+	&__lineNumber10 {
+		top: 415px;
+	}
+	&__lineNumber15 {
+		top: 639px;
+	}
+	&__lineNumber20 {
+		top: 870px;
+	}
+	&__lineNumber25 {
+		top: 1056px; /*1094px для "правильной" нумерации*/
+	}
+	&__lineNumber30 {
+		top: 1278px; /*1316px для "правильной" нумерации*/
+	}
+	}
+}
+
+
+@media screen and (min-width:480px) {
+
 .content {
 	position: relative;
 	width: 665px;
@@ -86,4 +174,5 @@
 	&__lineNumber30 {
 		top: 1278px; /*1316px для "правильной" нумерации*/
 	}
+}
 }
