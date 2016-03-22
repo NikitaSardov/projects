@@ -38,7 +38,7 @@ gulp.task('html_cosmos', function(){
 gulp.task('html_psd_1', function(){
   return gulp.src(html.psd_1)
     .pipe(gulp.dest('build/psd-1'))
-    // .pipe(reload({stream:true}))
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 HTML built! Check new files'));
 });
 
@@ -81,7 +81,7 @@ gulp.task('firstScreen_psd_1', function(){
 	}))
     .pipe(plugins.minifyCss())
     .pipe(gulp.dest('build/psd-1/css'))
-    // .pipe(reload({stream:true}))
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 CSS for firstScreen built! Check new files'));
 });
 
@@ -95,7 +95,7 @@ gulp.task('css_psd_1', function(){
     .pipe(plugins.minifyCss())
 	.pipe(plugins.concat('css/style.css'))
     .pipe(gulp.dest('build/psd-1'))
-    // .pipe(reload({stream:true}))
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 CSS built! Check new files'));
 });
 
@@ -125,10 +125,14 @@ gulp.task('img_psd_1', function(){
 		interlaced: true
 	}))
     .pipe(gulp.dest('build/psd-1/img'))
-    // .pipe(reload({stream:true}))
+    .pipe(reload({stream:true}))
 	.pipe(plugins.notify('psd-1 IMG built! Check new files'));
 });
 
+
+// ////////////////////////////////////////////////
+// Browser-Sync
+// // /////////////////////////////////////////////
 gulp.task('bsync_cosmos', function() {
   browserSync({
     server: {
@@ -140,21 +144,10 @@ gulp.task('bsync_cosmos', function() {
   });
 });
 
-gulp.task('bsync_psd_1', function() {
-  browserSync({
-    server: {
-      baseDir: "./build/psd-1"
-    },
-    port: 8080,
-    open: true,
-    notify: true
-  });
-});
-
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: "./build/cosmos"
+      baseDir: "./build/psd-1"
     },
     port: 8080,
     open: true,
@@ -179,7 +172,7 @@ gulp.task('compile_cosmos', ['html_cosmos', 'firstScreen_cosmos', 'css_cosmos', 
 
 gulp.task('compile_psd-1', ['html_psd_1', 'firstScreen_psd_1', 'css_psd_1', 'img_psd_1']);
 
-gulp.task('default', ['html_cosmos', 'html_psd_1', 'firstScreen_cosmos', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', /*'browserSync'*/]); 
+gulp.task('default', ['html_cosmos', 'html_psd_1', 'firstScreen_cosmos', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', 'browserSync']); 
 
 /*
 // ////////////////////////////////////////////////
@@ -192,7 +185,3 @@ gulp.task('html', function(){
 });
 */
 
-
-// ////////////////////////////////////////////////
-// Browser-Sync
-// // /////////////////////////////////////////////

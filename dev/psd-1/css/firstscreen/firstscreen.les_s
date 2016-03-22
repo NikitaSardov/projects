@@ -6,241 +6,246 @@
 
 @media screen and (max-width:479px) {
 
-/*в варианте для смартфонов от первого экрана с большой картинкой остается только заголовок. Блок с автором  и  социальными кнопками зафиксирован внизу страницы*/
-body {
-    font-family: @serif;
-	margin: 0;
-}
-
-/* растягиваем картинку на все окно браузера */
-
-.firstScreen {
-	max-width: 100%;
-	height: 100%;
-	overflow: hidden;
-	
-	
-	&__image {
-		display: none;
-		/* width: 100%;
-		height: 720px;
-		background-size: cover; */
-	}
-	
-	/* textContainer с position: absolute располагаем поверх картинки */
-	&__textContainer {
-		position: absolute;
-		bottom: 0;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	
-	/* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
-	&__text {
-		position: fixed;
-		bottom: 0;
-		padding: 0;		
-		margin: 0 auto;
-		width: 320px;
-	}
-	
-	&__title {
-		/*font-weight: bold;*/
+	/*в варианте для смартфонов от первого экрана с большой картинкой остается только заголовок. Блок с автором  и  социальными кнопками зафиксирован внизу страницы*/
+	body {
 		font-family: @serif;
-		font-size: 56px;
 		margin: 0;
-		padding: 0;
-		color: @color--white;
-	}
-	
-	&__headline {
-		font-family: @serif--italic;
-		font-style: italic;
-		font-size: 26px;
-		margin: 0;
-		padding: 0;
-		color: @color--gray;
-	}
-	
-	&__line {
-		display: none;
-		size: 1px;
-		color: @color--gray;
+		background-color: yellow;
 	}
 
-	&__writtenBy {
-		display: none;
-		font-family: @sans-serif;
-		font-size: 13px;
-		padding-top: 12px;
-		margin: 0;
-		color: @color--gray;
-	}
-	
-	&__author {
-		font-family: @sans-serif;
-		font-weight: bold;
-		font-size: 15px;
-		padding: 0;
-		margin: 0;
-		color: @color--white;
+	/* растягиваем картинку на все окно браузера */
+	.firstScreen {
+		max-width: 100%;
+		height: 100%;
+		overflow: visible;
+		
+		&__image {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 300px;
+			background-size: cover;
+			padding: 0;
+			margin: 0 auto;
+			background-color: red;
+		}
+		
+		&__textContainer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+
+		
+		/* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
+		&__text {
+			position: relative;
+			/*bottom: 0; */
+			width: 100%;
+			padding: 20px;		
+			margin: 0 auto;
+		}
+		
+		&__title {
+			/*font-weight: bold;*/
+			top: 0;
+			font-family: @serif;
+			font-size: 56px;
+			margin: 0;
+			padding: 0;
+			color: @color--white;
+		}
+		
+		&__headline {
+			font-family: @serif--italic;
+			font-style: italic;
+			font-size: 26px;
+			margin: 0;
+			padding: 0;
+			color: @color--gray;
+		}
+		
+		&__line {
+			display: none;
+			size: 1px;
+			color: @color--gray;
+		}
+
+		&__writtenBy {
+			display: none;
+			font-family: @sans-serif;
+			font-size: 13px;
+			padding-top: 12px;
+			margin: 0;
+			color: @color--gray;
+		}
+		
+		&__author {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 15px;
+			padding: 0;
+			margin: 0;
+			color: @color--white;
+		}
+
+		&__authorPhoto {
+			margin: -10px 0 0 5px;
+			vertical-align: -5px;
+			border-radius: 50%;
+			width: 28px;
+			height: 28px;
+			transition-property: transform;
+			transition-duration: .5s;
+			filter: grayscale(100%);
+		}
+
+		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
+		&__socialContainer {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-bottom: 0;
+		}
 	}
 
-	&__authorPhoto {
-		margin: -10px 0 0 5px;
-		vertical-align: -5px;
-		border-radius: 50%;
-		width: 28px;
-		height: 28px;
+
+	.socialSymbol {
+		margin: -10px -3px 0 20px;
+		width: 12px;
+		height: 12px;
+		text-align:right;
 		transition-property: transform;
 		transition-duration: .5s;
-		filter: grayscale(100%);
 	}
 
-	/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-	&__socialContainer {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		margin-bottom: 0;
+	.socialSymbol:hover, .firstScreen__authorPhoto:hover {
+		transform: scale(1.4);
 	}
-}
-
-
-.socialSymbol {
-	margin: -10px -3px 0 20px;
-	width: 12px;
-	height: 12px;
-	text-align:right;
-	transition-property: transform;
-	transition-duration: .5s;
-}
-
-.socialSymbol:hover, .firstScreen__authorPhoto:hover {
-	transform: scale(1.4);
-}
 
 }
 
 
 
 @media screen and (min-width:480px) {
-/*настройки для body и первого экрана (firstScreen)*/
-body {
-    font-family: @serif;
-	margin: 0;
-}
-
-/* растягиваем картинку на все окно браузера */
-/*
-html, body {
-	height: 100%;
-}  если делать как в макете, то первая картинка по высоте больше экрана, поэтому, не будем равняться на размеры экрана*/
-
-.firstScreen {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	
-	&__image {
-		width: 100%;
-		height: 720px;
-		background-size: cover;
-	}
-	
-	/* textContainer с position: absolute располагаем поверх картинки */
-	&__textContainer {
-		position: absolute;
-		top: 516px;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	
-	/* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
-	&__text {
-		position: relative;
-		padding: 0;		
-		margin: 0 auto;
-		width: 656px;
-	}
-	
-	&__title {
-		/*font-weight: bold;*/
+	/*настройки для body и первого экрана (firstScreen)*/
+	body {
 		font-family: @serif;
-		font-size: 56px;
 		margin: 0;
-		padding: 0;
-		color: @color--white;
-	}
-	
-	&__headline {
-		font-family: @serif--italic;
-		font-style: italic;
-		font-size: 26px;
-		margin: 0;
-		padding: 0;
-		color: @color--gray;
-	}
-	
-	&__line {
-		size: 1px;
-		color: @color--gray;
 	}
 
-	&__writtenBy {
-		font-family: @sans-serif;
-		font-size: 13px;
-		padding-top: 12px;
-		margin: 0;
-		color: @color--gray;
-	}
-	
-	&__author {
-		font-family: @sans-serif;
-		font-weight: bold;
-		font-size: 15px;
-		padding: 0;
-		margin: 0;
-		color: @color--white;
+	/* растягиваем картинку на все окно браузера */
+	/*
+	html, body {
+		height: 100%;
+	}  если делать как в макете, то первая картинка по высоте больше экрана, поэтому, не будем равняться на размеры экрана*/
+
+	.firstScreen {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		
+		&__image {
+			width: 100%;
+			height: 720px;
+			background-size: cover;
+		}
+		
+		/* textContainer с position: absolute располагаем поверх картинки */
+		&__textContainer {
+			position: absolute;
+			top: 516px;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+		
+		/* firstScreen__text с position: relative внутри firstScreen__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
+		&__text {
+			position: relative;
+			padding: 0;		
+			margin: 0 auto;
+			width: 656px;
+		}
+		
+		&__title {
+			/*font-weight: bold;*/
+			font-family: @serif;
+			font-size: 56px;
+			margin: 0;
+			padding: 0;
+			color: @color--white;
+		}
+		
+		&__headline {
+			font-family: @serif--italic;
+			font-style: italic;
+			font-size: 26px;
+			margin: 0;
+			padding: 0;
+			color: @color--gray;
+		}
+		
+		&__line {
+			size: 1px;
+			color: @color--gray;
+		}
+
+		&__writtenBy {
+			font-family: @sans-serif;
+			font-size: 13px;
+			padding-top: 12px;
+			margin: 0;
+			color: @color--gray;
+		}
+		
+		&__author {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 15px;
+			padding: 0;
+			margin: 0;
+			color: @color--white;
+		}
+
+		&__authorPhoto {
+			margin: -10px 0 0 5px;
+			vertical-align: -5px;
+			border-radius: 50%;
+			width: 28px;
+			height: 28px;
+			transition-property: transform;
+			transition-duration: .5s;
+			filter: grayscale(100%);
+		}
+
+		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
+		&__socialContainer {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-bottom: 0;
+		}
 	}
 
-	&__authorPhoto {
-		margin: -10px 0 0 5px;
-		vertical-align: -5px;
-		border-radius: 50%;
-		width: 28px;
-		height: 28px;
+
+
+
+	.socialSymbol {
+		margin: -10px -3px 0 20px;
+		width: 12px;
+		height: 12px;
+		text-align:right;
 		transition-property: transform;
 		transition-duration: .5s;
-		filter: grayscale(100%);
 	}
 
-	/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-	&__socialContainer {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		margin-bottom: 0;
+	.socialSymbol:hover, .firstScreen__authorPhoto:hover {
+		transform: scale(1.4);
 	}
-}
-
-
-
-
-.socialSymbol {
-	margin: -10px -3px 0 20px;
-	width: 12px;
-	height: 12px;
-	text-align:right;
-	transition-property: transform;
-	transition-duration: .5s;
-}
-
-.socialSymbol:hover, .firstScreen__authorPhoto:hover {
-	transform: scale(1.4);
-}
 
 }
 

@@ -7,17 +7,20 @@
 @media screen and (max-width:479px) {
 	.content {
 	position: relative;
-	width: 665px;
+	top: 300px;
+	width: 360px;
+	background-color: green;
 	font-family: @serif;
-	margin: 20px auto;
+	margin: 10px auto 0 20px ;
 	padding-top: 0;
 
 	&__p {
 		position: relative;
 		margin: 0;
-		padding: 20px 0 14px 5px;
+		padding: 10px 0 14px 5px;
 		font-size: 20.5px;
-		text-align: left;
+		text-align: justify;
+		word-spacing: -0.3ex;
 		line-height: 38px; /*1.85;*/
 	}
 
@@ -37,30 +40,9 @@
 	}
 
 	&__backToTopButton {
-		display: inline-block;
-		margin: -4px 0 0;
-		letter-spacing: 2px;
-		box-shadow: inset 16px 0px 15px -17px #ccc,
-					inset -16px 0px 15px -17px #ccc,
-					inset 0px -16px 15px -10px #ccc;
-		line-height: 1.5;
-		text-align: center;
-		height: 70px;
-		width: 100%;
-		font-family: @sans-serif;
-		font-size: 12px;
-		text-decoration: none;
-		color: #a3a3a3;
+		display: none;
 	}
-
-	&__backToTopButton:hover {
-		transform: translate(0, -4%);
-		box-shadow: inset 25px 0px 50px 0px #eee,
-					inset -25px 0px 50px 0px #eee,
-					inset 0px -20px 50px 0px #eee;
-		color: black;
-	}
-
+	
 	&__lineNumbers {
 		display: none;
 	}
@@ -71,87 +53,87 @@
 
 @media screen and (min-width:480px) {
 
-.content {
-	position: relative;
-	width: 665px;
-	font-family: @serif;
-	margin: 20px auto;
-	padding-top: 0;
-
-	&__p {
+	.content {
 		position: relative;
-		margin: 0;
-		padding: 20px 0 14px 5px;
-		font-size: 20.5px;
-		text-align: left;
-		line-height: 38px; /*1.85;*/
-	}
+		width: 665px;
+		font-family: @serif;
+		margin: 20px auto;
+		padding-top: 0;
 
-	&__cite {
-		font-size: 26px;
-		text-align: center;
-		padding: 20px 0 22px;
-		margin: 0;
-		font-family: @serif--italic;
-		font-style: italic;
-	}
+		&__p {
+			position: relative;
+			margin: 0;
+			padding: 20px 0 14px 5px;
+			font-size: 20.5px;
+			text-align: left;
+			line-height: 38px; /*1.85;*/
+		}
 
-	&__list {
-		list-style-position: inside;
-		margin: 0 0 0 30px;
-		padding: 5px 0px 22px 0;
-	}
+		&__cite {
+			font-size: 26px;
+			text-align: center;
+			padding: 20px 0 22px;
+			margin: 0;
+			font-family: @serif--italic;
+			font-style: italic;
+		}
 
-	&__backToTopButton {
-		display: inline-block;
-		margin: -4px 0 0;
-		letter-spacing: 2px;
-		box-shadow: inset 16px 0px 15px -17px #ccc,
-					inset -16px 0px 15px -17px #ccc,
-					inset 0px -16px 15px -10px #ccc;
-		line-height: 1.5;
-		text-align: center;
-		height: 70px;
-		width: 100%;
-		font-family: @sans-serif;
-		font-size: 12px;
-		text-decoration: none;
-		color: #a3a3a3;
-	}
+		&__list {
+			list-style-position: inside;
+			margin: 0 0 0 30px;
+			padding: 5px 0px 22px 0;
+		}
 
-	&__backToTopButton:hover {
-		transform: translate(0, -4%);
-		box-shadow: inset 25px 0px 50px 0px #eee,
-					inset -25px 0px 50px 0px #eee,
-					inset 0px -20px 50px 0px #eee;
-		color: black;
-	}
+		&__backToTopButton {
+			display: inline-block;
+			margin: -4px 0 0;
+			letter-spacing: 2px;
+			box-shadow: inset 16px 0px 15px -17px #ccc,
+						inset -16px 0px 15px -17px #ccc,
+						inset 0px -16px 15px -10px #ccc;
+			line-height: 1.5;
+			text-align: center;
+			height: 70px;
+			width: 100%;
+			font-family: @sans-serif;
+			font-size: 12px;
+			text-decoration: none;
+			color: #a3a3a3;
+		}
 
-	&__lineNumbers {
-		position: absolute;
-		left: -85px;
+		&__backToTopButton:hover {
+			transform: translate(0, -4%);
+			box-shadow: inset 25px 0px 50px 0px #eee,
+						inset -25px 0px 50px 0px #eee,
+						inset 0px -20px 50px 0px #eee;
+			color: black;
+		}
+
+		&__lineNumbers {
+			position: absolute;
+			left: -85px;
+		}
+			/*в макете строки пронумерованы как-то странно, возможно это нужно проверить*/
+		&__lineNumber1 {
+			top: -2px;
+		}
+		&__lineNumber5{
+			top: 158px;
+		}
+		&__lineNumber10 {
+			top: 415px;
+		}
+		&__lineNumber15 {
+			top: 639px;
+		}
+		&__lineNumber20 {
+			top: 870px;
+		}
+		&__lineNumber25 {
+			top: 1056px; /*1094px для "правильной" нумерации*/
+		}
+		&__lineNumber30 {
+			top: 1278px; /*1316px для "правильной" нумерации*/
+		}
 	}
-		/*в макете строки пронумерованы как-то странно, возможно это нужно проверить*/
-	&__lineNumber1 {
-		top: -2px;
-	}
-	&__lineNumber5{
-		top: 158px;
-	}
-	&__lineNumber10 {
-		top: 415px;
-	}
-	&__lineNumber15 {
-		top: 639px;
-	}
-	&__lineNumber20 {
-		top: 870px;
-	}
-	&__lineNumber25 {
-		top: 1056px; /*1094px для "правильной" нумерации*/
-	}
-	&__lineNumber30 {
-		top: 1278px; /*1316px для "правильной" нумерации*/
-	}
-}
 }
