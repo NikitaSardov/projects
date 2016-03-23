@@ -113,7 +113,7 @@ gulp.task('img_cosmos', function(){
 	}))
     .pipe(gulp.dest('build/cosmos/img'))
     // .pipe(reload({stream:true}))
-	.pipe(plugins.notify('cosmos IMG built! Check new files'));
+	/* .pipe(plugins.notify('cosmos IMG built! Check new files')); */
 });
 
 gulp.task('img_psd_1', function(){
@@ -126,7 +126,7 @@ gulp.task('img_psd_1', function(){
 	}))
     .pipe(gulp.dest('build/psd-1/img'))
     .pipe(reload({stream:true}))
-	.pipe(plugins.notify('psd-1 IMG built! Check new files'));
+/* 	.pipe(plugins.notify('psd-1 IMG built! Check new files')); */
 });
 
 
