@@ -344,7 +344,7 @@ body {
 
 /*для маленьких экранов*/
 
-@media screen and (max-width:479px) {
+@media screen and (max-device-width:540px) {
 
 	/*в варианте для смартфонов блок с автором  и  социальными кнопками зафиксирован внизу страницы*/
 
@@ -423,7 +423,7 @@ body {
 			font-weight: bold;
 			font-size: 15px;
 			padding: 10px 0 7px 25px;
-			margin: 0 0 0px -25px;
+			margin: 0 0 0 -26px;
 			color: @color--gray;
 		}
 

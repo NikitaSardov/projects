@@ -4,118 +4,245 @@
 @color--gray: #d7d7d7;
 @color--white: #fff;
 
-.footer{
-	/* display: block; */
-	width: 100%;
-	position: relative;
-	margin: 0;
-	padding: 0;
-	
-	&__text {
-		/* display: inline-block; */
-		padding: 0;
-		margin: 0;
-		/* width: 43%; */
-			/* top: 0; */
-		padding: 50px 60px;
-		color: @color--white;	
-		text-decoration: none;
-		
-	}
-	
-	&__element1 {
-		display: inline-block;
-		height: auto;
-		background-image: url('../img/footer__image1.jpg');
-		background-size: contain;
-		background-repeat: no-repeat;
-		padding: 0;
-		margin: 0;
-	background-color: green;
-		width: 50%;
-	}
-	
-	&__element2 {
-		display: inline-block;
-		height: 338px;
-		background-image: url('../img/footer__image2.jpg');
-		background-size: contain;
-		background-repeat: no-repeat;
-		padding: 0;
-		margin: 0;
-		width: 50%;
-	}
-/*
-	&__image1 {
-		background-image: url(../img/footer__image1.jpg);
-				background-size: cover;
-		background-repeat: no-repeat;
-		width: 41%;
-		/* background-position: right; */
-		 /* float: left; 
-	}
-	
-	&__image2 {
-		background-image: url(../img/footer__image2.jpg);
-				background-size: cover;
-		background-repeat: no-repeat;
-		width: 41%;
-		 background-position: right;
-		 float: right;
-	}
-	*/
-/* 
-	&__image {
+
+/*для средних и больших экранов*/
+
+@media screen and (min-device-width: 1024px) {
+	.footer{
 		width: 100%;
-		opacity: 0.8;
-		margin-bottom: -5%;  /*убрал непонятную полосу в самом низу страницы */	
-	
-
-	/* текст внутри элементов */
-	&__text {
-		position: absolute;
-		display: inline;
+		position: relative;
+		margin: 0 auto;
+		&__element1 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image1.jpg);
+			background-image-size: contain;
+			background-position: right bottom;
+			background-repeat: no-repeat;
+			padding: 50px 0 140px;
+		}
+		&__element2 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image2.jpg);
+			background-image-size: contain;
+			background-position: right top;
+			background-repeat: no-repeat;
+			padding: 50px 0 140px;
+		}			
+		&__a {
+		color: #fff;	
+		text-decoration: none;
 		top: 0;
-		padding: 50px 60px;
-		color: @color--white;	
-	}
+		padding: 0;
+		margin: 0;
+		}
 
-	&__header {
-		font-family: @sans-serif;
-		font-weight: bold;
-		font-size: 14px;
-		margin-bottom: 25px;
-	}
+		&__header {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			margin: 15px 0 25px 70px;
+		}
 
-	&__title {
-		font-size: 32px;
-		margin: 42px 0 0 10px;
-		font-family: @serif;
-	}
+		&__title {
+			font-size: 32px;
+			margin: 42px 0 0 70px;
+			font-family: @serif;
+		}
 
-	&__headline {
-		font-family: @serif--italic;
-		font-style: italic;
-		font-size: 26px;
-		margin:  8px 0 0 10px;
-	}
+		&__headline {
+			font-family: @serif;
+			font-style: italic;
+			font-size: 26px;
+			margin:  6px 0 0 70px;
+		}
 
-	&__header:hover, &__title:hover, &__headline:hover {
-		
-		animation-name: textIndent;
-		animation-duration: 0.1s;
-		animation-timing-function: ease-in;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
+		&__header:hover, &__title:hover, &__headline:hover {
+			animation-name: textIndent;
+			animation-duration: 0.1s;
+			animation-timing-function: ease-in;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
 
-	@keyframes textIndent {
-		100%{
-			text-indent: 10px;
+		@keyframes textIndent {
+			100%{
+				text-indent: 10px;
+			}
 		}
 	}
+}
+	
+	
+/*для маленьких мониторов*/
 
-	&__image:hover {
-		opacity: 1;
+@media (min-device-width: 720px) and (max-device-height: 720px)  {
+			.footer{
+		width: 100%;
+		top: 100px;
+		position: relative;
+		margin: 0;
+		&__element1 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image1.jpg);
+			background-image-size: cover;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			padding: 50px 0 60px;
+			
+		}
+		
+		&__element2 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image2.jpg);
+			background-image-size: contain;
+			background-repeat: no-repeat;
+			background-position: right top;
+			padding: 50px 0 60px;
+		}
+		
+		&__a {
+			color: #fff;	
+			text-decoration: none;
+		}
+		
+				&__header {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			margin: 15px 0 25px 20px;
+		}
+		
+				&__title {
+			font-size: 28px;
+			margin: 22px 0 0 20px;
+			font-family: @serif;
+		}
+		
+				&__headline {
+			font-family: @serif;
+			font-style: italic;
+			font-size: 22px;
+			margin:  6px 0 0 20px;
+		}
+	}
+}
+	
+	
+/*для горизонтальных устройств*/
+
+@media (max-device-width: 719px) and (orientation: landscape) {
+		.footer{
+		width: 100%;
+		top: 80px;
+		position: relative;
+		margin: 0;
+		&__element1 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image1.jpg);
+			background-image-size: cover;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			padding: 50px 0 60px;
+			
+		}
+		
+		&__element2 {
+			display: inline-block;
+			width: 50%;
+			background-image: url(../img/footer__image2.jpg);
+			background-image-size: contain;
+			background-repeat: no-repeat;
+			background-position: right top;
+			padding: 50px 0 60px;
+		}
+		
+		&__a {
+			color: #fff;	
+			text-decoration: none;
+		}
+		
+				&__header {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			margin: 15px 0 25px 20px;
+		}
+		
+				&__title {
+			font-size: 28px;
+			margin: 22px 0 0 20px;
+			font-family: @serif;
+		}
+		
+				&__headline {
+			font-family: @serif;
+			font-style: italic;
+			font-size: 22px;
+			margin:  6px 0 0 20px;
+		}
+	}
+}
+
+
+/*для маленьких экранов*/
+
+@media (max-device-width: 480px) {
+		.footer{
+		width: 100%;
+		top: 80px;
+		position: relative;
+		margin: 0;
+		&__element1 {
+			display: inline-block;
+			width: 100%;
+			background-image: url(../img/footer__image1.jpg);
+			background-image-size: cover;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			padding: 50px 0 60px;
+			margin: 2px 0 2px;
+			
+		}
+		
+		&__element2 {
+			display: inline-block;
+			width: 100%;
+			background-image: url(../img/footer__image2.jpg);
+			background-image-size: contain;
+			background-repeat: no-repeat;
+			background-position: right top;
+			padding: 50px 0 60px;
+			margin: 2px 0 2px;
+		}
+			
+		&__a {
+			color: #fff;	
+			text-decoration: none;
+		}
+		
+		&__header {
+			font-family: @sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			margin: 15px 0 25px 20px;
+		}
+		
+		&__title {
+			font-size: 32px;
+			margin: 22px 0 0 20px;
+			font-family: @serif;
+		}
+		
+		&__headline {
+			font-family: @serif;
+			font-style: italic;
+			font-size: 22px;
+			margin:  6px 0 0 20px;
+		}
 	}
 }
