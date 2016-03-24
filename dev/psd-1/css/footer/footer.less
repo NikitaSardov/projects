@@ -7,7 +7,7 @@
 
 /*для средних и больших экранов*/
 
-@media screen and (min-device-width: 1024px) {
+@media screen and (min-width:1024px) {
 	.footer{
 		width: 100%;
 		position: relative;
@@ -77,7 +77,7 @@
 	
 /*для маленьких мониторов*/
 
-@media (min-device-width: 720px) and (max-device-height: 720px)  {
+@media (min-width: 800px) and (max-height: 640px) {
 			.footer{
 		width: 100%;
 		top: 100px;
@@ -134,7 +134,7 @@
 	
 /*для горизонтальных устройств*/
 
-@media (max-device-width: 719px) and (orientation: landscape) {
+@media (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
 		.footer{
 		width: 100%;
 		top: 80px;
@@ -191,7 +191,7 @@
 
 /*для маленьких экранов*/
 
-@media (max-device-width: 480px) {
+@media screen and (max-width:479px) {
 		.footer{
 		width: 100%;
 		top: 80px;

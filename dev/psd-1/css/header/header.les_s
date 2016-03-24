@@ -7,7 +7,7 @@
 
 /*для средних и больших экранов*/
 
-@media screen and (min-device-width:1024px) {
+@media screen and (min-width:1024px) {
 	/*настройки для body и первого экрана (header)*/
 	body {
 		font-family: @serif;
@@ -127,7 +127,7 @@
 
 /*для маленьких мониторов*/
 
-@media (min-device-width: 720px) and (max-device-height: 720px)  {
+@media (min-width: 800px) and (max-height: 640px) {
 body {
 		margin: 0;
 	}
@@ -152,7 +152,6 @@ body {
 			width: 100%;
 			overflow: hidden;
 		}	
-		/* header__text с position: relative внутри header__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
 		&__text {
 			position: relative;
 			padding: 0;		
@@ -235,7 +234,7 @@ body {
 
 /*для горизонтальных устройств*/
 
-@media (max-device-width: 720px) and (orientation: landscape) {
+@media (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
 	body {
 		margin: 0;
 	}
@@ -344,7 +343,7 @@ body {
 
 /*для маленьких экранов*/
 
-@media screen and (max-device-width:540px) {
+@media screen and (max-width:479px) {
 
 	/*в варианте для смартфонов блок с автором  и  социальными кнопками зафиксирован внизу страницы*/
 
