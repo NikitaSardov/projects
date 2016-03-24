@@ -54,7 +54,7 @@
 		</div>	
 		
 		<!--пока остается маленький косячишко>
-		<!--div class="footer">
+		<div class="footer">
 			<div class="footer__element1">
 				<a class="footer__text" href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank">
 					<p class="footer__header">NEXT IN YOUR READING LIST...</p>
@@ -70,7 +70,7 @@
 			</div>	
 		</div>		
 		
-		<!--рабочая версия div class="footer">
+		<рабочая версия div class="footer">
 			<div class="footer__element1">   
 				<a href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank"><img class="footer__image" src="img/footer__image1.jpg" alt="Next article: Seaside, no thanks..." /></a>
 				<a class="footer__text" href="https://ru.wikipedia.org/wiki/Радиотелескоп" target="_blank">
@@ -86,95 +86,6 @@
 					<p class="footer__headline">This is an awesome headline</p>
 				</a>
 			</div>
-		</div>
-		CSS:
-
-.footer{
-	width: 100%;
-	position: relative;
-	margin: 0 auto;
-
-	&__element1 {
-		display: block;
-		float: left;
-		padding: 0;
-		margin: 0;
-		width: 50%;
-		/* background-color: yellow;*/
-	}
-
-	&__element2 {
-		display: block;
-		 float: right;
-		padding: 0;
-		margin: 0;
-		width: 50%;
-		/*background-color: tomato;*/
-	}
-
-	&__image {
-		width: 100%;
-		opacity: .5;
-		overflow: hidden;
-	 	margin-bottom: -5px;  /*убрал непонятную полосу в самом низу страницы */	
-	}
-
-	/* текст внутри элементов */
-	&__text {
-		position: absolute;
-		/* display: inline; */
-		top: 0;
-		padding: 50px 60px;
-		color: @color--white;	
-		text-decoration: none;
-		background-color: green;
-	/* background-image: url(../img/footer__image2.jpg);
-	background-size: contain; */
-	}
-
-	&__header {
-		font-family: @sans-serif;
-		font-weight: bold;
-		font-size: 14px;
-		margin-bottom: 25px;
-	}
-
-	&__title {
-		font-size: 32px;
-		margin: 42px 0 0 10px;
-		font-family: @serif;
-	}
-
-	&__headline {
-		font-family: @serif--italic;
-		font-style: italic;
-		font-size: 26px;
-		margin:  8px 0 0 10px;
-	}
-
-	&__header:hover, &__title:hover, &__headline:hover {
-		
-		animation-name: textIndent;
-		animation-duration: 0.1s;
-		animation-timing-function: ease-in;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
-
-	@keyframes textIndent {
-		100%{
-			text-indent: 10px;
-		}
-	}
-
-	&__image:hover {
-		opacity: 1;
-	}
-}
-		
-
-
-		-->
-		
+		</div-->
     </body>
 </html>
