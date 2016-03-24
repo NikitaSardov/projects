@@ -17,9 +17,9 @@ var gulp        = require('gulp');
 	};
 	css	= {
 		cosmos:['dev/cosmos/**/*.*ss'],
-		firstScreen_cosmos: ['dev/cosmos/css/firstscreen/firstscreen.les_s'],
+		header_cosmos: ['dev/cosmos/css/header/header.les_s'],
 		psd_1:['dev/psd-1/**/*.*ss'],
-		firstScreen_psd_1: ['dev/psd-1/css/firstscreen/firstscreen.les_s']
+		header_psd_1: ['dev/psd-1/css/header/header.les_s']
 	};
 	img	= {
 		cosmos:['dev/cosmos/img/*.*'],
@@ -45,8 +45,8 @@ gulp.task('html_psd_1', function(){
 //////////////	
 // LESS+CSS //
 //////////////
-gulp.task('firstScreen_cosmos', function(){
-  return gulp.src(css.firstScreen_cosmos)
+gulp.task('header_cosmos', function(){
+  return gulp.src(css.header_cosmos)
 	.pipe(plugins.less())
 	.pipe(plugins.autoprefixer({
 		browsers: ['last 2 version'],
@@ -55,7 +55,7 @@ gulp.task('firstScreen_cosmos', function(){
     .pipe(plugins.minifyCss())
     .pipe(gulp.dest('build/cosmos/css'))
     // .pipe(reload({stream:true}))
-	.pipe(plugins.notify('cosmos CSS for firstScreen built! Check new files'));
+	.pipe(plugins.notify('cosmos CSS for header built! Check new files'));
 });
 
 gulp.task('css_cosmos', function(){
@@ -72,8 +72,8 @@ gulp.task('css_cosmos', function(){
 	.pipe(plugins.notify('cosmos CSS built! Check new files'));
 });
 
-gulp.task('firstScreen_psd_1', function(){
-  return gulp.src(css.firstScreen_psd_1)
+gulp.task('header_psd_1', function(){
+  return gulp.src(css.header_psd_1)
 	.pipe(plugins.less())
 	.pipe(plugins.autoprefixer({
 		browsers: ['last 2 version'],
@@ -82,7 +82,7 @@ gulp.task('firstScreen_psd_1', function(){
     .pipe(plugins.minifyCss())
     .pipe(gulp.dest('build/psd-1/css'))
     .pipe(reload({stream:true}))
-	.pipe(plugins.notify('psd-1 CSS for firstScreen built! Check new files'));
+	.pipe(plugins.notify('psd-1 CSS for header built! Check new files'));
 });
 
 gulp.task('css_psd_1', function(){
@@ -133,10 +133,10 @@ gulp.task('img_psd_1', function(){
 // ////////////////////////////////////////////////
 // Browser-Sync
 // // /////////////////////////////////////////////
-gulp.task('bsync_cosmos', function() {
+gulp.task('bsync', function() {
   browserSync({
     server: {
-      baseDir: "./build/cosmos"
+      baseDir: "./"
     },
     port: 8080,
     open: true,
@@ -159,20 +159,20 @@ gulp.task('watcher', function(){
   gulp.watch(html.cosmos, ['html_cosmos']);
   gulp.watch(html.psd_1, ['html_psd_1']);
   gulp.watch(css.cosmos, ['css_cosmos']);
-  gulp.watch(css.firstScreen_cosmos, ['firstScreen_cosmos']);
+  gulp.watch(css.header_cosmos, ['header_cosmos']);
   gulp.watch(css.psd_1, ['css_psd_1']);
-  gulp.watch(css.firstScreen_psd_1, ['firstScreen_psd_1']);
+  gulp.watch(css.header_psd_1, ['header_psd_1']);
   gulp.watch(img.cosmos, ['img_cosmos']);
   gulp.watch(img.psd_1, ['img_psd_1']);
 });
 
 
 
-gulp.task('compile_cosmos', ['html_cosmos', 'firstScreen_cosmos', 'css_cosmos', 'img_cosmos']);
+gulp.task('compile_cosmos', ['html_cosmos', 'header_cosmos', 'css_cosmos', 'img_cosmos']);
 
-gulp.task('compile_psd-1', ['html_psd_1', 'firstScreen_psd_1', 'css_psd_1', 'img_psd_1']);
+gulp.task('compile_psd-1', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_1']);
 
-gulp.task('default', ['html_cosmos', 'html_psd_1', 'firstScreen_cosmos', 'css_cosmos', 'firstScreen_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', 'browserSync']); 
+gulp.task('default', ['html_cosmos', 'html_psd_1', 'header_cosmos', 'css_cosmos', 'header_psd_1', 'css_psd_1', 'img_cosmos', 'img_psd_1', 'watcher', 'browserSync']); 
 
 /*
 // ////////////////////////////////////////////////
