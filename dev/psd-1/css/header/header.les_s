@@ -475,7 +475,25 @@ body {
 		transform: scale(1.4);
 		opacity: 1;
 	}
+	.content {
+	position: relative;
+	top: 140px;
+	width: 90%;
+	background-color: @color--white;
+	font-family: @serif;
+	margin: 10px auto 0 20px ;
+	padding-top: 0;
 
+		&__p { /* 	скопировано из файла "content" для ускорения загрузки на мобильных */
+			position: relative;
+			margin: 0;
+			padding: 10px 0 14px 5px;
+			font-size: 20.5px;
+			text-align: justify;
+			word-spacing: -0.3ex;
+			line-height: 38px; /*1.85;*/
+		}
+	}
 }
 
 /*для микроэкранов*/
