@@ -7,7 +7,7 @@
 
 /*для средних и больших экранов*/
 
-@media screen and (min-width:1024px) {
+@media (min-width:1024px) {
 	.footer{
 		width: 100%;
 		position: relative;
@@ -77,21 +77,20 @@
 	
 /*для маленьких мониторов*/
 
-@media (min-width: 800px) and (max-height: 640px) {
-			.footer{
+@media (min-width:721px) and (max-width: 1023px) {
+	.footer{
 		width: 100%;
 		top: 100px;
 		position: relative;
 		margin: 0;
 		&__element1 {
-			display: inline-block;
-			width: 50%;
-			background-image: url(../img/footer__image1.jpg);
-			background-image-size: cover;
-			background-repeat: no-repeat;
-			background-position: right bottom;
-			padding: 50px 0 60px;
-			
+		display: inline-block;
+		width: 50%;
+		background-image: url(../img/footer__image1.jpg);
+		background-image-size: cover;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		padding: 50px 0 60px;
 		}
 		
 		&__element2 {
@@ -128,13 +127,26 @@
 			font-size: 22px;
 			margin:  6px 0 0 20px;
 		}
+		&__header:hover, &__title:hover, &__headline:hover {
+			animation-name: textIndent;
+			animation-duration: 0.1s;
+			animation-timing-function: ease-in;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes textIndent {
+			100%{
+				text-indent: 10px;
+			}
+		}
 	}
 }
 	
 	
 /*для горизонтальных устройств*/
 
-@media (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
+@media (max-width: 720px) {
 		.footer{
 		width: 100%;
 		top: 80px;
@@ -147,8 +159,7 @@
 			background-image-size: cover;
 			background-repeat: no-repeat;
 			background-position: right bottom;
-			padding: 50px 0 60px;
-			
+			padding: 20px 0 60px;			
 		}
 		
 		&__element2 {
@@ -158,7 +169,7 @@
 			background-image-size: contain;
 			background-repeat: no-repeat;
 			background-position: right top;
-			padding: 50px 0 60px;
+			padding: 20px 0 60px;
 		}
 		
 		&__a {
@@ -166,20 +177,21 @@
 			text-decoration: none;
 		}
 		
-				&__header {
+		&__header {
 			font-family: @sans-serif;
 			font-weight: bold;
 			font-size: 14px;
-			margin: 15px 0 25px 20px;
+ 			margin: 15px 0 25px 20px;
 		}
 		
-				&__title {
-			font-size: 28px;
-			margin: 22px 0 0 20px;
+		&__title {
+			font-size: 24px;
+ 			margin: 22px 0 0 20px;
 			font-family: @serif;
 		}
+
 		
-				&__headline {
+		&__headline {
 			font-family: @serif;
 			font-style: italic;
 			font-size: 22px;
@@ -191,7 +203,7 @@
 
 /*для маленьких экранов*/
 
-@media screen and (max-width:479px) {
+@media (max-width:479px) {
 		.footer{
 		width: 100%;
 		top: 80px;

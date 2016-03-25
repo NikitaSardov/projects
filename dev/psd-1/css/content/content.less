@@ -6,7 +6,7 @@
 
 /*для средних и больших экранов*/
 
-@media screen and (min-width:1024px) {
+@media (min-width:1024px) {
 
 	.content {
 		position: relative;
@@ -96,7 +96,7 @@
 
 /*для маленьких мониторов*/
 
-@media (min-width: 800px) and (max-height: 640px) {
+@media (min-width:721px) and (max-width: 1023px) {
 	.content {
 		position: relative;
 		width: 665px;
@@ -149,14 +149,14 @@
 			color: #a3a3a3;
 		}
 
-/* 		&__backToTopButton:hover {
+		&__backToTopButton:hover {
 			transform: translate(0, -4%);
 			box-shadow: inset 25px 0px 50px 0px #eee,
 						inset -25px 0px 50px 0px #eee,
 						inset 0px -20px 50px 0px #eee;
 			color: black;
 		}
- */
+		
 		&__lineNumbers {
 			display: none;
 			position: absolute;
@@ -168,7 +168,7 @@
 	
 /*для горизонтальных устройств*/
 
-@media (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
+@media (max-width: 720px){
 
 	.content {
 		position: relative;
@@ -234,7 +234,7 @@
 
 /*для маленьких экранов*/
 
-@media screen and (max-width:479px) {
+@media (max-width:479px) {
 	.content {
 	position: relative;
 	top: 140px;
