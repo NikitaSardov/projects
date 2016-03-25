@@ -43,12 +43,16 @@
 			font-weight: bold;
 			font-size: 14px;
 			margin: 15px 0 25px 70px;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 
 		&__title {
 			font-size: 32px;
 			margin: 42px 0 0 70px;
 			font-family: @serif;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 
 		&__headline {
@@ -56,20 +60,12 @@
 			font-style: italic;
 			font-size: 26px;
 			margin:  6px 0 0 70px;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 
 		&__header:hover, &__title:hover, &__headline:hover {
-			animation-name: textIndent;
-			animation-duration: 0.1s;
-			animation-timing-function: ease-in;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-
-		@keyframes textIndent {
-			100%{
-				text-indent: 10px;
-			}
+			text-indent: 10px;
 		}
 	}
 }
@@ -108,37 +104,33 @@
 			text-decoration: none;
 		}
 		
-				&__header {
+		&__header {
 			font-family: @sans-serif;
 			font-weight: bold;
 			font-size: 14px;
 			margin: 15px 0 25px 20px;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 		
-				&__title {
+		&__title {
 			font-size: 28px;
 			margin: 22px 0 0 20px;
 			font-family: @serif;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 		
-				&__headline {
+		&__headline {
 			font-family: @serif;
 			font-style: italic;
 			font-size: 22px;
 			margin:  6px 0 0 20px;
+			transition-property: text-indent;
+			transition-duration: 0.1s;
 		}
 		&__header:hover, &__title:hover, &__headline:hover {
-			animation-name: textIndent;
-			animation-duration: 0.1s;
-			animation-timing-function: ease-in;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-
-		@keyframes textIndent {
-			100%{
-				text-indent: 10px;
-			}
+			text-indent: 10px;
 		}
 	}
 }
