@@ -1,524 +1,114 @@
-@serif: 'Gentium Book Basic', serif;
-@serif--italic: 'Gentium Book Basic Italic', serif;
-@sans-serif: 'Open Sans', Arial, sans-serif;
-@color--gray: #d7d7d7;
-@color--white: #fff;
-@import url(https://fonts.googleapis.com/css?family=Gentium+Book+Basic);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,900);
+@sans-serif: 'Raleway', Arial, sans-serif;
 
-/*для средних и больших экранов*/
-
-@media (min-width:1024px)  {
-	/*настройки для body и первого экрана (header)*/
 	body {
-		font-family: @serif;
-		margin: 0;
-	}
-
-	/* растягиваем картинку на все окно браузера */
-	/*
-	html, body {
-		height: 100%;
-	}  если делать как в макете, то первая картинка по высоте больше экрана, поэтому, не будем равняться на размеры экрана*/
-
-	.header {
 		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		
-		&__image {
-			width: 100%;
-			height: 720px;
-		}
-		
-		/* textContainer с position: absolute располагаем поверх картинки */
-		&__textContainer {
-			position: absolute;
-			top: 516px;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-		}
-		
-		/* header__text с position: relative внутри header__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
-		&__text {
-			position: relative;
-			padding: 0;		
-			margin: 0 auto;
-			width: 656px;
-		}
-		
-		&__title {
-			/*font-weight: bold;*/
-			font-family: @serif;
-			font-size: 56px;
-			margin: 0;
-			padding: 0;
-			color: @color--white;
-		}
-		
-		&__headline {
-			font-family: @serif--italic;
-			font-style: italic;
-			font-size: 26px;
-			margin: 0;
-			padding: 0;
-			color: @color--gray;
-		}
-		
-		&__line {
-			size: 1px;
-			color: @color--gray;
-		}
-
-		&__writtenBy {
-			font-family: @sans-serif;
-			font-size: 13px;
-			padding-top: 12px;
-			margin: 0;
-			color: @color--gray;
-		}
-		
-		&__author {
-			font-family: @sans-serif;
-			font-weight: bold;
-			font-size: 15px;
-			padding: 0;
-			margin: 0;
-			color: @color--white;
-		}
-
-		&__authorPhoto {
-			margin: -10px 0 0 5px;
-			vertical-align: -5px;
-			border-radius: 50%;
-			width: 28px;
-			height: 28px;
-			transition-property: transform;
-			transition-duration: .5s;
-			filter: grayscale(100%);
-		}
-
-		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-		&__socialContainer {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			margin-bottom: 0;
-		}
-	}
-
-
-
-
-	.socialSymbol {
-		margin: -10px -3px 0 20px;
-		width: 12px;
-		height: 12px;
-		text-align:right;
-		transition-property: transform;
-		transition-duration: .5s;
-	}
-
-	.socialSymbol:hover, .header__authorPhoto:hover {
-		transform: scale(1.4);
-	}
-
-}
-
-/*для маленьких мониторов*/
-
-@media (min-width:721px) and (max-width: 1023px){
-body {
+		font-family: @sans-serif;
 		margin: 0;
 	}
 
 	.header {
+/* 		display: block; */
+/* 		position: relative;		 */
+		background-image: url('../img/header__bg.png');
+		background-size: cover;
 		width: 100%;
-		height: 100%;
-		
-		&__image {
-			position: absolute;
-			width: 100%;
-			top: -140px;
-			height: 300px;
-			padding: 0;
+		height: 682px;	
+	
+		&__logo {
+		position: absolute;
+		top: 29px;
+		left: 91px;
+		width: 148px;
+		height: 60px;
+		background-image: url('../img/header__logo.png');
+		background-repeat: no-repeat;
+		background-size: contain;
 		}
-		
-		&__textContainer {
-			position: absolute;
-			top: 20px;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			overflow: hidden;
-		}	
-		&__text {
+	
+		&__hamburger {
+		position: absolute;
+		top: 42px;
+		right: 90px;
+		background-image: url('../img/header__hamburger.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 32px;
+		height: 60px;
+	}
+
+		&__avatar {
+		position: absolute;
+		top: 223px;
+		left: 278px;
+		padding: 5px;
+		border: 1px solid white;
+		border-radius: 50%;
+			
+		&Image {
 			position: relative;
-			padding: 0;		
-			margin: 0 auto;
-			width: 665px;
+			width: 235px;
+			height: 235px;
+			background-image: url('../img/header__avatar.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			}
 		}
 		
-		&__title {
-			font-family: @serif;
-			font-size: 52px;
-			margin: 0;
-			padding: 0;
-			color: @color--white;
-		}
-		
-		&__headline {
-			font-family: @serif--italic;
-			font-style: italic;
-			font-size: 22px;
-			margin: 0;
-			padding: 0;
-			color: @color--gray;
-		}
-		
-		&__line {
-			size: 1px;
-			color: @color--gray;
-		}
-
-		&__writtenBy {
-			display: none;
-		}
-		
-		&__author {
-			font-family: @sans-serif;
-			font-weight: bold;
-			font-size: 15px;
-			padding-top: 7px;
-			margin: 0;
-			color: @color--white;
-		}
-
-		&__authorPhoto {
-			margin: -10px 0 0 5px;
-			vertical-align: -5px;
-			border-radius: 50%;
-			width: 28px;
-			height: 28px;
-			transition-property: transform;
-			transition-duration: .5s;
-			filter: grayscale(100%);
-		}
-
-		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-		&__socialContainer {
+		&__content {
 			position: absolute;
-			bottom: 0;
-			right: 0;
-			margin-bottom: 0;
+			top: 267px;
+			left: 615px;
+			@textColor: white;
+			color: @textColor;
+					
+			&BoldText {
+				font-weight: bold;
+				font-size: 31px;
+				letter-spacing: 17.7px;
+			}
+			
+			
+			&Line {
+				align: center;
+				width: 65%;
+				height: 1px;
+				border: 0;
+				background-color: #52edc7;
+			}
+			
+			
+			&UpperCaseText {
+				font-weight: 200;
+				font-size: 47px;
+				letter-spacing: .3px;
+			}
+				
+			&Button {
+				margin:26px 102px 5px 85px;
+				padding: 17px 0 13px 25px;
+				border: 2px solid;
+				border-radius: 3px;
+				font-weight: 400;
+				font-size: 14px;
+				letter-spacing: .5px;
+			}
 		}
+	
 	}
-
-
-
-
-	.socialSymbol {
-		margin: -10px -3px 0 20px;
-		width: 12px;
-		height: 12px;
-		text-align:right;
-		transition-property: transform;
-		transition-duration: .5s;
-	}
-
-	.socialSymbol:hover, .header__authorPhoto:hover {
-		transform: scale(1.4);
-	}
-
-}
-
-/*для горизонтальных устройств*/
-
-@media (max-width: 720px) {
-	body {
-		margin: 0;
-	}
-
-	.header {
-		width: 100%;
-		height: 100%;
-		
-		&__image {
-			position: absolute;
-			width: 100%;
-			top: -140px;
-			height: 300px;
-			padding: 0;
-		}
-		
-		&__textContainer {
-			position: absolute;
-			top: 20px;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			overflow: hidden;
-		}	
-		/* header__text с position: relative внутри header__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
-		&__text {
-			position: relative;
-			padding: 0;		
-			margin: 0 auto;
-			width: 80%;
-		}
-		
-		&__title {
-			font-family: @serif;
-			font-size: 52px;
-			margin: 0;
-			padding: 0;
-			color: @color--white;
-		}
-		
-		&__headline {
-			font-family: @serif--italic;
-			font-style: italic;
-			font-size: 22px;
-			margin: 0;
-			padding: 0;
-			color: @color--gray;
-		}
-		
-		&__line {
-			size: 1px;
-			color: @color--gray;
-		}
-
-		&__writtenBy {
-			display: none;
-		}
-		
-		&__author {
-			font-family: @sans-serif;
-			font-weight: bold;
-			font-size: 15px;
-			padding-top: 7px;
-			margin: 0;
-			color: @color--white;
-		}
-
-		&__authorPhoto {
-			margin: -10px 0 0 5px;
-			vertical-align: -5px;
-			border-radius: 50%;
-			width: 28px;
-			height: 28px;
-			transition-property: transform;
-			transition-duration: .5s;
-			filter: grayscale(100%);
-		}
-
-		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-		&__socialContainer {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			margin-bottom: 0;
-		}
-	}
-
-
-
-
-	.socialSymbol {
-		margin: -10px -3px 0 20px;
-		width: 12px;
-		height: 12px;
-		text-align:right;
-		transition-property: transform;
-		transition-duration: .5s;
-	}
-
-	.socialSymbol:hover, .header__authorPhoto:hover {
-		transform: scale(1.4);
-	}
-
-}
-
-
-/*для маленьких экранов*/
-
-@media (max-width:479px) {
-
-	/*в варианте для смартфонов блок с автором  и  социальными кнопками зафиксирован внизу страницы*/
+	
+	
+	
 
 	
-	body {
-		max-width: 100%;
-		font-family: @serif;
-		margin: 0;
-		padding: 0;
-		
-	}
-
-	/* растягиваем картинку на все окно браузера */
-	.header {
+	.mySkills {
+/* 		display: block; */
+/* 		position: relative;		 */
+		background-color: green;
+		background-size: cover;
 		width: 100%;
-		height: 100%;
-		
-		&__image {
-			position: absolute;
-			top: 0;
-			width: 100%;
-			top: -70px;
-			height: 210px;
-			padding: 0;
-		}
-		
-		&__textContainer {
-			position: absolute;
-			top: 15px;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			overflow: hidden;
-		}
-
-		
-		/* header__text с position: relative внутри header__textContainer сохраняет ширину и расположение содержимого при изменении размеров окна */
-		&__text {
-			position: relative;
-			/*bottom: 0; */
-			width: 100%;
-			padding: 30px 0 0 25px;		
-			margin: 0 auto;
-			
-			
-		}
-		
-		&__title {
-			/*font-weight: bold;*/
-			top: 0;
-			font-family: @serif;
-			font-size: 46px;
-			margin: 0;
-			padding: 0;
-			color: @color--white;
-		}
-		
-		&__headline {
-			font-family: @serif--italic;
-			font-style: italic;
-			font-size: 20px;
-			margin: 0;
-			padding: 0;
-			color: @color--gray;
-		}
-		
-		&__author {
-			position: fixed;
-			bottom: 0;
-			background-image: url(img/share__bg.jpg);
-			background-size: cover;
-			/* float: bottom; */
-			z-index: 1;
-			width: 100%;
-    		font-family: @sans-serif;
-			font-weight: bold;
-			font-size: 15px;
-			padding: 10px 0 7px 25px;
-			margin: 0 0 0 -26px;
-			color: @color--gray;
-		}
-
-		&__authorPhoto {
-			margin: -10px 0 0 5px;
-			vertical-align: -5px;
-			border-radius: 50%;
-			width: 25px;
-			height: 25px;
-			transition-property: transform;
-			transition-duration: .5s;
-			filter: grayscale(100%);
-		}
-
-		/* контейнер для позиционирования социальных кнопок на том же уровне, что и имя автора */
-		&__socialContainer {
-			z-index: 3;
-			position: fixed;
-			width: 105px;
-			height: 22px;
-			top: 7px;
-			left: 5%;
-			margin-bottom: 0;
-			background-color: @color--gray;
-			opacity: 0.8;
-			
-		}
-		
-		&__line {
-			display: none;
-		}
-
-		&__writtenBy {
-			display: none;
-		}
+		height: 680px;
+		transform: skewY(-2.7deg);
+	
+	
 	}
-
-
-	.socialSymbol {
-		margin: 5px 10px 0 10px;
-		width: 12px;
-		height: 12px;
-		text-align:right;
-		transition-property: transform;
-		transition-duration: .5s;
-	}
-
-	.socialSymbol:hover, .header__authorPhoto:hover {
-		transform: scale(1.4);
-		opacity: 1;
-	}
-	.content { /* 	скопировано из файла "content" для ускорения загрузки на мобильных */
-	position: relative;
-	top: 140px;
-	width: 90%;
-	background-color: @color--white;
-	font-family: @serif;
-	margin: 10px auto 0 20px ;
-	padding-top: 0;
-
-		&__p { /* 	скопировано из файла "content" для ускорения загрузки на мобильных */
-			position: relative;
-			margin: 0;
-			padding: 10px 0 14px 5px;
-			font-size: 20.5px;
-			text-align: justify;
-			word-spacing: -0.3ex;
-			line-height: 38px; /*1.85;*/
-		}
-	}
-}
-
-/*для микроэкранов*/
-
-@media (max-width: 300px){
-	.header {
-		width: 100%;
-		height: 100%;
-		&__title {
-			/*font-weight: bold;*/
-			top: 0;
-			font-family: @serif;
-			font-size: 40px;
-			margin: 0;
-			padding: 0;
-			color: @color--white;
-		}
-		
-		&__headline {
-			font-family: @serif--italic;
-			font-style: italic;
-			font-size: 19px;
-			margin: 0;
-			padding: 0;
-			color: @color--gray;
-		}
-	}
-}

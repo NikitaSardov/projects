@@ -253,4 +253,4 @@ gulp.task('compile_final', ['html_final', 'header_final', 'css_final', 'img_fina
 
 //gulp.task('default', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_1', 'watcher_psd_1', 'bsync_psd_1']); 
 
-gulp.task('default', ['html_final', 'header_final', 'css_final', 'img_final', 'watcher_final', /*'bsync_final'*/]); 
+gulp.task('default', ['html_final', 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
