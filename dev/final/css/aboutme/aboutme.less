@@ -35,6 +35,36 @@
 			color: #888b90;
 			line-height: 28px;
 		}
+		
+		&__social {
+			display: inline-block;
+			@spriteSideLength: 71px;
+			height: @spriteSideLength;
+			width: @spriteSideLength;
+			background: url('../img/aboutme__social.png');
+			margin: 13px 9px 0;
+			transform: scale(0.9);
+			background-repeat: no-repeat;
+			
+			&--fb {
+				background-position: 0px;
+			}
+			&--tw {
+				background-position: -@spriteSideLength;
+			}
+			&--in {
+				background-position: -2*@spriteSideLength;
+			}
+			&--dr {
+				background-position: -3*@spriteSideLength;
+			}
+			&--gl {
+				background-position: -4*@spriteSideLength;
+			}
+			&--pn {
+				background-position: -5*@spriteSideLength;
+			}
+		}
 		}
 	
 		
