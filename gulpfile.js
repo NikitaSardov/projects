@@ -16,6 +16,9 @@ var gulp        = require('gulp');
 		psd_1:['dev/psd-1/index.html'],
 		final:['dev/final/index.html']
 	};
+	js = {
+		final:['dev/final/js/*.*']
+	};
 	css	= {
 		cosmos:['dev/cosmos/**/*.*ss'],
 		header_cosmos: ['dev/cosmos/css/header/header.les_s'],
@@ -51,6 +54,18 @@ gulp.task('html_final', function(){
     .pipe(reload({stream:true}))
 	.pipe(plugins.notify('FINAL HTML built! Check new files'));
 });
+
+
+//////////
+// JS //
+//////////
+gulp.task('js_final', function(){
+  return gulp.src(js.final)
+    .pipe(gulp.dest('build/final/js'))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('JS built! Check new files'));
+});
+
 //////////////	
 // LESS+CSS //
 //////////////
@@ -235,6 +250,7 @@ gulp.task('watcher_psd_1', function(){
 
 gulp.task('watcher_final', function(){
   gulp.watch(html.final, ['html_final']);
+  /*gulp.watch(js.final, ['js_final']);*/
   gulp.watch(css.final, ['css_final']);
   gulp.watch(css.header_final, ['header_final']);
   gulp.watch(img.final, ['img_final']);
@@ -253,4 +269,4 @@ gulp.task('compile_final', ['html_final', 'header_final', 'css_final', 'img_fina
 
 //gulp.task('default', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_1', 'watcher_psd_1', 'bsync_psd_1']); 
 
-gulp.task('default', ['html_final', 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
+gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 

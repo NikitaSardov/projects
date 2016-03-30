@@ -2,6 +2,8 @@
 @sans-serif: 'Raleway', Arial, sans-serif;
 @mySkills__textColor: white;
 @mySkills__backgroundColor: #1abc9c;
+@progressBar__borderWidth: 25px;
+@progressBarRadius: 150px;
 	
 
 	
@@ -10,6 +12,7 @@
 		height: 430px;
 		margin-top: 30px;
 		text-align: center;
+		color: @mySkills__textColor;
 	
 		&__skewedBackgroundUp {
 /* 			top: 0;
@@ -20,7 +23,7 @@
 			height: 430px;
 			z-index: -1;
 			transform-origin: left top;
-		transform: skewY(2.7deg);
+			transform: skewY(2.7deg);
 		} 
 		
 		
@@ -38,7 +41,6 @@
 
 		&__title {
 			padding: 30px 0 25px 65px;
-			color: @mySkills__textColor;
 			font-family: @sans-serif;
 			font-weight: 500;
 			font-size: 36px;
@@ -52,9 +54,135 @@
 			margin-left: 43%;
 			border: 0;
 			background-color: @mySkills__textColor;
+		}		
+		&__progressBar {
+		display: inline-block;
+		margin: 83px 30px;
+		height: @progressBarRadius;
+		width: @progressBarRadius;
+		z-index: 1;
 		}
-		
+	
 	}
 	
-	
+	.progressBar {
+		@progressBar__background: #6ed4c0;
 		
+		&__background {
+			background-color: @progressBar__background;
+			z-index: 2;
+			width: @progressBarRadius;
+			height: @progressBarRadius;
+			border-radius: 50%;
+		}
+			
+			&__right {
+				.right () {
+					z-index: 3;
+					background-color: @mySkills__textColor;
+					position: relative;
+					left: 50%;
+					width: @progressBarRadius/2;
+					height: @progressBarRadius;
+					border-radius: 0 @progressBarRadius @progressBarRadius 0;
+				}
+				&--photoshop {
+					.right;
+				}
+				
+				
+				&--illustrator {
+					.right;
+				}
+				
+				
+				&--photography {
+					.right;
+				}
+				
+				&--html5_css3 {
+					.right;
+				}
+				
+				&--c4d {
+					.right;
+				}
+				
+				&--afterEffect {
+					.right;
+				}
+			}
+			
+				&__mask {
+					z-index: 4;
+					background-color: @progressBar__background;
+					position: relative;
+					left: -@progressBarRadius/2;
+					width: @progressBarRadius/2;
+					height: @progressBarRadius;
+					border-radius: @progressBarRadius 0 0 @progressBarRadius;
+				}
+					&__left {
+						.left (@angle) {
+						z-index: 5;
+						background-color: @mySkills__textColor;
+						position: relative;
+						left: @progressBarRadius/2;
+						width: @progressBarRadius/2;
+						height: @progressBarRadius;
+						border-radius: 0 @progressBarRadius @progressBarRadius 0;
+						transform-origin: 0 50%;
+						@angle_deg: 3.6deg*(@angle - 50);
+						transform: rotate(@angle_deg);
+						}
+
+						&--photoshop {
+							.left(75);
+						}
+						
+						
+						&--illustrator {
+							.left(68);
+						}
+						
+						
+						&--photography {
+							.left(50);
+						}
+						
+						&--html5_css3 {
+							.left(95);
+						}
+						
+						&--c4d {
+							.left(80);
+						}
+						
+						&--afterEffect {
+							.left(100);
+						}
+					}
+						&__value {
+							&Background {
+								z-index: 6;
+								position: relative;
+								top: -(@progressBarRadius - @progressBar__borderWidth/2 );
+								left: @progressBar__borderWidth/2;
+								background-color: @mySkills__backgroundColor;
+								width: (@progressBarRadius)-@progressBar__borderWidth;
+								height: (@progressBarRadius)-@progressBar__borderWidth;
+								border-radius: 50%;
+							}
+							&Text {
+								margin: 0;
+								padding: 40px 0 30px 0;
+								font-family: Raleway;
+								font-size: 32px;			
+								
+								&--smallText {
+										vertical-align: 0px;
+										font-size: 24px;	
+								}
+							}
+						}
+	}			
