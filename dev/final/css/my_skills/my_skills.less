@@ -15,8 +15,6 @@
 		color: @mySkills__textColor;
 	
 		&__skewedBackgroundUp {
-/* 			top: 0;
-			left: 0; */
 			position: absolute;
 			background-color: @mySkills__backgroundColor;
 			width: 100%;
@@ -66,6 +64,18 @@
 	}
 	
 	.progressBar {
+		&__skillName {
+			display: inline-block;
+			padding: 40px 0 30px 0;
+			font-family: Raleway;
+			font-size: 16px;
+			
+			&--smallText {
+					vertical-align: -2px;
+					font-size: 15px;	
+			}
+		}
+		
 		@progressBar__background: #6ed4c0;
 		
 		&__background {
@@ -174,6 +184,7 @@
 								border-radius: 50%;
 							}
 							&Text {
+								display: inline-block;
 								margin: 0;
 								padding: 40px 0 30px 0;
 								font-family: Raleway;

@@ -1,0 +1,56 @@
+@sans-serif: 'Raleway', Arial, sans-serif;
+@process__textColor: black;
+@process__backgroundColor: #52edc7;
+
+	.process {
+		z-index: -1; /*под краем фона предыдущего блока*/
+		position: relative;
+		background-color: @process__backgroundColor;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		height: 546px;
+		margin-top: -4px;
+
+		&__skewedBackgroundUp {
+
+			position: absolute;
+			background-color: @process__backgroundColor;
+			width: 100%;
+			height: 430px;
+			transform-origin: left top;
+			transform: skewY(2.7deg);
+		} 
+				
+		&__skewedBackgroundDown {
+			position: absolute;
+			background-color: @process__backgroundColor;
+			width: 100%;
+			height: 430px;
+			transform-origin: left top;
+			transform: skewY(-5.4deg);
+		} 
+		
+		
+		&__title {
+			margin-top: 100px;
+			padding: 85px 0 25px 22px;
+			color: @process__textColor;
+			font-family: @sans-serif;
+			font-weight: 500;
+			font-size: 36px;
+			letter-spacing: 15px;
+			}
+		
+		&__line {
+			/* align: center; */
+			width: 19%;	
+			height: 1px;
+			border: 0;
+			background-color: @process__textColor;
+		}
+		
+		&__image {
+			position: relative;
+		}
+}	

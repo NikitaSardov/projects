@@ -1,2 +1,6 @@
-@import url(aboutme/aboutme.less) all;
-@import url(myskills/myskills.less) all;
+@import url(about_me/about_me.less) all;
+@import url(my_skills/my_skills.less) all;
+@import url(education/education.less) all;
+@import url(work_experience/work_experience.less) all;
+@import url(services/services.less) all;
+@import url(portfolio/portfolio.less) all;
