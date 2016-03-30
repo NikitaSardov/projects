@@ -1,4 +1,3 @@
-@import url(default/default.less) all;
-@import url(aboutme/aboutme.less) all;
 @import url(content/content.less) all;
+@import url(share/share.less) all;
 @import url(footer/footer.less) all;
