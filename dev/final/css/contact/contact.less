@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@sans-serif: 'Raleway', Arial, sans-serif;
+@contact__textColor: #2b2b2b;
+@contact__backgroundColor: #52edc7;
+
+	.contact {
+/* 		z-index: -2; */
+		position: relative;
+		background-color: @contact__backgroundColor;
+		margin: 0;
+		font-family: @sans-serif;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		height: 830px;
+		
+		&__content {
+			max-width: 1300px;
+			font-size: 17px;
+			font-weight: 300;
+			color: #888b90;
+			line-height: 28px;
+			margin: 0 auto;
+		}
+
+		&__column {
+		
+			&--address {
+				display: inline-block;
+/* 				color: #fff; */
+				width: 400px;
+				margin: 47px 15px 0;
+				text-align: left;
+			}
+			
+			&--input {
+				display: inline-block;
+				/* color: #fff; */
+				width: 700px;
+				margin: 47px 15px 0;
+				height: 20px;
+				text-align: left;
+			}
+		}
+		
+		&__sayHi {
+			font-family: @sans-serif;
+			color: @contact__textColor;
+			font-size: 17px;
+			font-weight: 300;
+		}
+			
+		&__contact {
+			font-family: Lato;
+			font-size: 17px;
+			font-weight: 400;
+			color: @contact__textColor;
+		}
+		
+		&__message {
+			resize: none;
+		}
+	}

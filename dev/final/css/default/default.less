@@ -11,6 +11,9 @@
 @portfolio__textColor: white;
 @process__textColor: white;
 @process__backgroundColor: #52edc7;
+@contact__textColor: #2b2b2b;
+@contact__backgroundColor: 52edc7;
+@downloadMyResume__textColor: #2b2b2b;
 
 	.default {
 		&__title {
@@ -52,6 +55,14 @@
 				padding-top: 25px;
 				color: @process__textColor;
 			}
+			
+			
+			
+			
+			&--contact {
+				.title;
+				color: @contact__textColor;
+			}			
 		}
 		&__line {
 			.line () {
@@ -88,6 +99,23 @@
 				.line;
 				background-color: @process__textColor;	
 			}
+			
+			
+			
+			&--contact {
+				.line;
+				background-color: @contact__textColor;	
+			}
+			&--contactLine {
+				.line;
+				width: 200px;
+				background-color: @contact__textColor;	
+			}
+			&--downloadMyResume {
+				.line;
+				width: 200px;
+				background-color: @downloadMyResume__textColor;
+			}			
 		}
 				
 		&__symbols {
@@ -130,7 +158,24 @@
 				.symbol;
 				padding: 0 2px;
 				background-position: -143px;
-
 			}
+			
+			
+			&--contact {
+				.symbol;
+				padding: 0 2px;
+				background-position: -215px;
+			}
+			&--contactSend {
+				.symbol;
+				padding: 0 2;
+				margin: 0;
+				background-position: -266px;
+			}
+			&--downloadMyResume {
+				.symbol;
+				padding: 0 2px;
+				background-position: -242px;
+			}			
 		}
 	}

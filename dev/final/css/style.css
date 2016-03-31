@@ -7,3 +7,6 @@
 @import url(portfolio/portfolio.less) all;
 @import url(process/process.less) all;
 @import url(testimonial/testimonial.less) all;
+@import url(contact/contact.less) all;
+@import url(download_my_resume/download_my_resume.less) all;
+@import url(footer/footer.less) all;
