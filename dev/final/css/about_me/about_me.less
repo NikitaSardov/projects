@@ -1,39 +1,22 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Raleway:900,200,300,500|Lato:300);
 @sans-serif: 'Raleway', Arial, sans-serif;
-@aboutme__textColor: black;
+@aboutMe__textColor: black;
 
 	.aboutMe {
 		position: relative;
 		width: 100%;
 		text-align: center;
 		padding: 0;
-		height: 446px;
-		
-		
-		&__title {
-			padding: 45px 0 25px 22px;
-			color: @aboutme__textColor;
-			font-family: @sans-serif;
-			font-weight: 500;
-			font-size: 36px;
-			letter-spacing: 15px;
-			}
-		
-		&__line {
-			/* align: center; */
-			width: 19%;
-			height: 1px;
-			border: 0;
-			background-color: @aboutme__textColor;
-		}
+		height: 523px;
 		
 		&__content {
-			padding: 25px 7.5% 0 7.3%;
+			padding: 10px 7.5% 0 7.3%;
+			max-width: 1250px;
 			font-family: Lato;
-			font-size: 17px;
+			font-size: 18px;
 			font-weight: 300;
 			color: #888b90;
-			line-height: 28px;
+			line-height: 30px;
 		}
 		
 		&__social {
@@ -42,8 +25,8 @@
 			height: @spriteSideLength;
 			width: @spriteSideLength;
 			background: url('../img/about_me__social.png');
-			margin: 13px 9px 0;
-			transform: scale(0.9);
+			margin: 18px 11px 0;
+			transform: scale(1);
 			background-repeat: no-repeat;
 			
 			&--fb {

@@ -1,0 +1,136 @@
+@aboutMe__textColor: black;	
+@sans-serif: 'Raleway', Arial, sans-serif;
+@mySkills__textColor: white;
+@mySkills__backgroundColor: #1abc9c;
+@education__textColor: #2b2b2b;
+@education__backgroundColor: #eee;
+@workExperience__textColor: #2b2b2b;
+@workExperience__backgroundColor: #eee;
+@services__textColor: #2b2b2b;
+@services__backgroundColor: #fff;
+@portfolio__textColor: white;
+@process__textColor: white;
+@process__backgroundColor: #52edc7;
+
+	.default {
+		&__title {
+			.title () {
+				margin-top: 4px;
+				padding: 45px 0 23px 21px;
+				font-family: @sans-serif;
+				font-weight: 500;
+				font-size: 36px;
+				letter-spacing: 17px;
+			}
+			&--aboutMe {
+				.title;
+				color: @aboutMe__textColor;
+			}
+			&--mySkills {
+				.title;
+				padding-top: 33px;
+			}
+			&--education {
+				.title;
+				padding-top: 98px;
+			}
+			&--workExperience {
+				.title;
+			}
+			&--services {
+				.title;
+				padding-top: 27px;
+			}
+			&--portfolio {
+				.title;
+				color: @portfolio__textColor;
+				padding-top: 104px;
+			}
+			&--process {
+				.title;
+				margin: 0;
+				padding-top: 25px;
+				color: @process__textColor;
+			}
+		}
+		&__line {
+			.line () {
+				display: inline-block;
+				width: 6%;
+				height: 1px;
+				border: 0;
+			}
+			&--aboutMe {
+				.line;
+				background-color: @aboutMe__textColor;
+			}
+			&--mySkills {
+				.line;
+				background-color: @mySkills__textColor;
+			}
+			&--education {
+				.line;
+				background-color: @education__textColor;
+			}
+			&--workExperience {
+				.line;
+				background-color: @workExperience__textColor;	
+			}
+			&--services {
+				.line;
+				background-color: @services__textColor;	
+			}
+			&--portfolio {
+				.line;
+				background-color: @portfolio__textColor;	
+			}
+			&--process {
+				.line;
+				background-color: @process__textColor;	
+			}
+		}
+				
+		&__symbols {
+			.symbol () {
+				display: inline-block;
+				background: url("../img/default__symbols.png") no-repeat;
+				vertical-align: -15px;
+				margin: 0 30px 0;
+				width: 22px;
+				height: 25px;
+				/* background-color: green; */
+			}
+			&--aboutMe {
+				.symbol;
+				background-position: 0;
+				margin-left: 35px;
+			}
+			&--mySkills {
+				.symbol;
+				background-position: -22px;
+			}
+			&--education {
+				.symbol;
+				background-position: -45px;
+			}
+			&--workExperience {
+				.symbol;
+				background-position: -69px;
+			}
+			&--services {
+				.symbol;
+				background-position: -93px;
+			}
+			&--portfolio {
+				.symbol;
+				padding: 0 4px;
+				background-position: -114px;
+			}
+			&--process {
+				.symbol;
+				padding: 0 2px;
+				background-position: -143px;
+
+			}
+		}
+	}

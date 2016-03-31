@@ -14,13 +14,13 @@
 		background-image: url('../img/header__bg.png');
 		background-size: cover;
 		width: 100%;
-		height: 682px;	
+		height: 726px;	
 	
 		&__logo {
 		position: absolute;
-		top: 29px;
-		left: 91px;
-		width: 148px;
+		top: 30px;
+		left: 97px;
+		width: 156px;
 		height: 60px;
  		background-image: url('../img/header__logo.png');
 		background-repeat: no-repeat;
@@ -30,8 +30,8 @@
 		&__hamburger--border {
 			position: absolute;
 			border: 2px solid transparent;
-			top: 42px;
-			right: 90px;
+			top: 32px;
+			right: 85px;
 			padding: 10px;
 		}
 
@@ -45,23 +45,22 @@
 		background-image: url('../img/header__hamburger.png');
 		background-repeat: no-repeat;
 		background-size: contain;
-		width: 46px;
-		height: 30px;
+		width: 34px;
+		height: 22px;
 		}
 
-		
 		&__avatar {
 		position: absolute;
-		top: 223px;
-		left: 278px;
-		padding: 5px;
+		top: 236px;
+		left: 294px;
+		padding: 7px;
 		border: 1px solid white;
 		border-radius: 50%;
 			
 		&Image {
 			position: relative;
-			width: 235px;
-			height: 235px;
+			width: 250px;
+			height: 250px;
 			background-image: url('../img/header__avatar.png');
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -70,48 +69,48 @@
 		
 		&__content {
 			position: absolute;
-			top: 267px;
-			left: 615px;
+			top: 285px;
+			left: 655px;
 			color: @header__textColor;
-					
-			&BoldText {
-				font-weight: 900;
-				font-size: 31px;
-				letter-spacing: 17.7px;
-			}
-			
-			
-			&Line {
-				align: center;
-				width: 65%;
-				height: 1px;
-				border: 0;
-				background-color: #52edc7;
-			}
-			
-			
-			&UpperCaseText {
-				font-weight: 200;
-				font-size: 47px;
-				letter-spacing: .3px;
-			}
-				
-			&Button {
-				margin:26px 102px 5px 85px;
-				padding: 17px 0 13px 25px;
-				border: 2px solid white;
-				border-radius: 3px;
-				font-weight: 300;
-				font-size: 14px;
-				letter-spacing: .5px;
-			}
-			
-			&Button:hover {
-				color: #206957;
-				background-color: #52edc7;
-				border-color: #52edc7;
-				
-			}
 		}
-	
+				
+		&__boldText {
+			font-weight: 900;
+			font-size: 32px;
+			letter-spacing: 19.3px;
+		}
+				
+		&__line {
+			margin-top: 10px;
+			align: center;
+			width: 65%;
+			height: 1px;
+			border: 0;
+			background-color: #52edc7;
+		}
+				
+		&__upperCaseText {
+			margin-top: 10px;
+			font-weight: 200;
+			font-size: 48.5px;
+			letter-spacing: 1px;
+		}
+			
+		&__button {
+			margin:28px 0 5px 89px;
+			padding: 18px 0 17px 27px;
+			border: 2px solid white;
+			width: 218px;
+			border-radius: 3px;
+			font-weight: 400;
+			font-size: 14px;
+			letter-spacing: 1.3px;
+		}
+		
+		&__button:hover {
+			color: #206957;
+			background-color: #52edc7;
+			border-color: #52edc7;
+			
+		}
 	}
