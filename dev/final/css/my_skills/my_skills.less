@@ -1,13 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:900,200,300,500|Lato:300);
-@sans-serif: 'Raleway', Arial, sans-serif;
-@mySkills__textColor: white;
-@mySkills__backgroundColor: #1abc9c;
-@blockHeight: 459px;
-
-	
 	.mySkills {
 		width: 100%;
-		height: @blockHeight;
+		height: @mySkills__blockHeight;
 		margin-top: 30px;
 		text-align: center;
 		color: @mySkills__textColor;
@@ -16,7 +9,7 @@
 			position: absolute;
 			background-color: @mySkills__backgroundColor;
 			width: 100%;
-			height: @blockHeight;
+			height: @mySkills__blockHeight;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(2.7deg);
@@ -26,7 +19,7 @@
 			position: absolute;
 			background-color: @mySkills__backgroundColor;
 			width: 100%;
-			height: @blockHeight;
+			height: @mySkills__blockHeight;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(-5.4deg);

@@ -1,8 +1,3 @@
-@sans-serif: 'Raleway', Arial, sans-serif;
-@process__textColor: white;
-@process__backgroundColor: #52edc7;
-@blockHeight: 325px;
-
 	.process {
 		z-index: 0; /*над краем фона предыдущего блока*/
 		position: relative;
@@ -10,14 +5,14 @@
 		width: 100%;
 		text-align: center;
 		padding: 0;
-		height: @blockHeight;
+		height: @process__blockHeight;
 
 		&__skewedBackgroundUp {
 
 			position: absolute;
 			background-color: @process__backgroundColor;
 			width: 100%;
-			height: @blockHeight;
+			height: @process__blockHeight;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(2.7deg);
@@ -27,13 +22,57 @@
 			position: absolute;
 			background-color: @process__backgroundColor;
 			width: 100%;
-			height: @blockHeight;
+			height: @process__blockHeight;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(-5.4deg);
 		} 
 		
+		
 		&__image {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			flex-wrap: wrap;
 			margin: 25px auto;
+				
+			.process (@sprite) {
+				background-image: url(../img/process__image.png);
+				background-position: @sprite;
+			 	background-repeat: no-repeat;
+				background-size: cover;
+				min-width: 132px;
+				height: 132px;
+				margin: 0 5px;
+				transition-property: all;
+				transition-duration: .3s;
+			}
+			@sprite: -133px;
+			&--idea {
+				.process (0);
+			}
+			&--concept {
+				.process (1*@sprite);
+			}
+			&--design {
+				.process (2*@sprite);
+			}
+			&--develop {
+				.process (3*@sprite);
+			}
+			&--test {
+				.process (4*@sprite);
+			}
+			&--launch {
+				.process (5*@sprite);
+			}
+			&--arrowRight {
+				.process (6*@sprite);
+				min-width: 17px;
+			}
+			
+			&--idea:hover, &--concept:hover, &--design:hover, &--develop:hover, &--test:hover, &--launch:hover, &--arrowRight:hover {
+				transform: translateX(3px);
+			}
 		}
 	}
