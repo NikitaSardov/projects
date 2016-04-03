@@ -4,8 +4,8 @@
 		background-color: @services__backgroundColor;
 		width: 100%;
 		text-align: center;
-		padding: 0;
-		height: 567px;
+		padding-bottom: 45px;
+/* 		height: 567px; */
 
 		&__skewedBackgroundUp {
 
@@ -15,7 +15,7 @@
 			height: 430px;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(2.7deg);
+			transform: skewY(-2.7deg);
 		} 
 				
 		&__skewedBackgroundDown {
@@ -25,7 +25,7 @@
 			height: 430px;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(-5.4deg);
+			transform: skewY(2.7deg);
 		} 
 		
 		&__content {
@@ -36,11 +36,14 @@
 			font-weight: 300;
 			color: #888b90;
 			line-height: 28px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 		&__column {
 			display: inline-block;
 			color: #fff;
-			width: 19%;
+			width: 260px;
 			margin: 52px 22px 0;
 		}
 		@serviceIconSideLength: 190px;

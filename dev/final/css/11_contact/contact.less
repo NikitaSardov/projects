@@ -2,20 +2,25 @@
  		z-index: 1;
 		position: relative;
 		background-color: @contact__backgroundColor;
-		margin: 0;
+		margin-bottom: -100px;
 		font-family: @sans-serif;
 		width: 100%;
 		text-align: center;
-		padding: 0;
-		height: 830px;
+		padding: 0 0 225px 0;
+		overflow: hidden;
+ 		height: 800px;
 		
 		&__content {
+			position: relative;
 			max-width: 1300px;
 			font-size: 17px;
 			font-weight: 300;
 			color: #888b90;
 			line-height: 28px;
 			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 
 		&__column {
@@ -23,8 +28,9 @@
 			&--address {
 				display: inline-block;
 /* 				color: #fff; */
-				width: 400px;
+				max-width: 300px;
 				margin: 47px 15px 0;
+				/* padding: 40px;  */
 				text-align: left;
 			}
 			
@@ -32,7 +38,7 @@
 				display: inline-block;
 				/* color: #fff; */
 				width: 700px;
-				margin: 47px 15px 0;
+				margin: 47px 0 0 40px;
 				height: 20px;
 				text-align: left;
 			}
@@ -55,4 +61,26 @@
 		&__message {
 			resize: none;
 		}
+		
+		&__skewedBackgroundUpLeft {
+
+			position: absolute;
+			bottom: -200px;
+			background-color: @downloadMyResume__backgroundColor;
+			width: 100%;
+			height: 350px/* @downloadMyResume__blockHeight */;
+			z-index: -1;
+			transform-origin: 50% top;
+			transform: skewY(12deg);
+		} 
+				
+		&__skewedBackgroundUpRight {
+			position: absolute;
+			background-color: @downloadMyResume__backgroundColor;
+			width: 100%;
+			height: 350px/* @downloadMyResume__blockHeight */;
+			z-index: -1;
+			transform-origin: 50% top;
+			transform: skewY(-24deg);
+		} 
 	}

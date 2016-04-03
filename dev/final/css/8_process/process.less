@@ -1,32 +1,33 @@
 	.process {
 		z-index: 2; /*над краем фона предыдущего блока*/
-		position: relative;
-		/* background-color: @process__backgroundColor; */
-		width: 100%;
+		position: relative; 
+		background-color: @process__backgroundColor; 
 		text-align: center;
-		padding: 0;
+		padding-bottom: 25px;
 		margin-top: -5px;
-		height: @process__blockHeight;
+/* 		height: @process__blockHeight; */
 
 		&__skewedBackgroundUp {
 
 			position: absolute;
 			background-color: @process__backgroundColor;
+			top: 0;
 			width: 100%;
-			height: @process__blockHeight;
+			height: 270px/* @process__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(2.7deg);
+			transform: skewY(-2.7deg);
 		} 
 				
 		&__skewedBackgroundDown {
 			position: absolute;
 			background-color: @process__backgroundColor;
+			bottom: 0;
 			width: 100%;
-			height: @process__blockHeight;
+			height: 270px/* @process__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(-5.4deg);
+			transform: skewY(2.7deg);
 		} 
 		
 		

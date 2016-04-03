@@ -1,28 +1,32 @@
 	.mySkills {
+		position: relative;
 		width: 100%;
-		height: @mySkills__blockHeight;
+/* 		height: @mySkills__blockHeight; */
 		margin-top: 30px;
 		text-align: center;
+		padding-bottom: 35px; 
 		color: @mySkills__textColor;
+		background-color: @mySkills__backgroundColor;
 	
 		&__skewedBackgroundUp {
 			position: absolute;
 			background-color: @mySkills__backgroundColor;
 			width: 100%;
-			height: @mySkills__blockHeight;
+			height: 350px/* @mySkills__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(2.7deg);
+			transform: skewY(-2.7deg);
 		} 
 			
 		&__skewedBackgroundDown {
 			position: absolute;
+			bottom: 0;
 			background-color: @mySkills__backgroundColor;
 			width: 100%;
-			height: @mySkills__blockHeight;
+			height: 350px/* @mySkills__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
-			transform: skewY(-5.4deg);
+			transform: skewY(2.7deg);
 		} 
 		
 		&__progressBar {

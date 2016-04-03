@@ -1,11 +1,12 @@
 	.downloadMyResume {
-		z-index: 0; /*над краем фона предыдущего блока*/
+		z-index: 2; /*над краем фона предыдущего блока*/
 		position: relative;
 		background-color: @downloadMyResume__backgroundColor;
 		width: 100%;
 		text-align: center;
 		padding: 0;
 		height: @downloadMyResume__blockHeight;
+		
 
 		&__skewedBackgroundUpLeft {
 
@@ -29,16 +30,21 @@
 		} 
 		
 		&__button {
-			margin: 0 auto;
-			padding: 18px 0 17px 27px;
-			border: 2px solid white;
-			background-color: #f1c40f;
-			color: @downloadMyResume__textColor;
+			margin: 20px auto 0px;
+			padding: 18px 15px 17px 15px;
 			width: 218px;
+			border: 0px;
+			background-color: #f1c40f;
+			border-bottom: 2px solid #b8950a;
+			color: @downloadMyResume__textColor;
 			font-family: Lato;
+			font-weight: 700;
+			font-size: 17px;
 			border-radius: 3px;
-			font-weight: 400;
-			font-size: 14px;
-			letter-spacing: 1.3px;
+			&:hover {
+				color: #206957;
+				background-color: #52edc7;
+				border-bottom: 2px solid #fff;
+			}
 		}
 	}	

@@ -25,7 +25,7 @@ var gulp        = require('gulp');
 		psd_1:['dev/psd-1/**/*.*ss'],
 		header_psd_1: ['dev/psd-1/css/header/header.les_s'],
 		final:['dev/final/**/*.*ss'],
-		header_final: ['dev/final/css/header/header.les_s']
+		header_final: ['dev/final/css/1_header/header.les_s']
 	};
 	img	= {
 		cosmos:['dev/cosmos/img/*.*'],

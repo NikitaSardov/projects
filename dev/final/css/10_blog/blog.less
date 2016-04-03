@@ -4,24 +4,26 @@
 		background-color: @blog__backgroundColor;
 		width: 100%;
 		text-align: center;
-		padding: 0;
+		padding-bottom: 35px;
+		margin: 0 auto;
 		/* height: @blog__blockHeight; */
 		
 		&__skewedBackgroundUp {
-			position: relative;
+			position: absolute;
 			background-color: @blog__backgroundColor;
 			width: 100%;
-			height: 70px/* @blog__blockHeight */;
+			height: 120px/* @blog__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(-2.7deg);
 		} 
 		
 		&__skewedBackgroundDown {
-			position: relative;
+			position: absolute;
 			background-color: @blog__backgroundColor;
 			width: 100%;
-			height: 70px/* @blog__blockHeight */;
+			bottom: 0;
+			height: 120px/* @blog__blockHeight */;
 			z-index: -1;
 			transform-origin: left top;
 			transform: skewY(2.7deg);
@@ -32,7 +34,7 @@
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		max-width: 1300px;
+		max-width: 100%;
 		position: relative;
 		margin: 30px 3% 0;
 		padding: 0;
@@ -59,7 +61,7 @@
 			.thumbnail (0*@thumbnailSideLength, 0*@thumbnailSideLength);
 		}
 		&--thumbnail5 {
-			.thumbnail (1*@thumbnailSideLength, 0*@thumbnailSideLength);
+			.thumbnail (1*@thumbnailSideLength+1, 0*@thumbnailSideLength);
 		}
 		&--thumbnail6 {
 			.thumbnail (2*@thumbnailSideLength+2, 0*@thumbnailSideLength);
