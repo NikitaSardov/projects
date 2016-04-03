@@ -1,10 +1,9 @@
 ﻿	.portfolio {
-		z-index: 1;
+		z-index: 0;
 		position: relative;
-		width: 100%;
 		text-align: center;
 		padding: 0;
-		height: 440px;
+		height: @portfolio__blockHeight;
 		background-image: url('../img/portfolio__bg.png');
 		background-size: cover;
 		width: 100%;
@@ -72,7 +71,7 @@
 			border-color: #f1c40f;		
 		}
 	}
-	.thumbnails__settings () { 
+	.portfolioThumbnails__settings () { 
 	/*создаются 2 слоя, одинаковых размеров, один над другим. кнопки нарисованы на нижнем*/
 		display: flex;
 		justify-content: center;
@@ -85,8 +84,8 @@
 
 	@thumbnailSideLength: 300px;
 
-	.thumbnails__buttonLayer {
-		.thumbnails__settings;
+	.portfolioThumbnails__buttonLayer {
+		.portfolioThumbnails__settings;
 
 		.thumbnail () {
 			width: @thumbnailSideLength;
@@ -106,8 +105,8 @@
 		}
 	}
 	
-	.thumbnails {
-		.thumbnails__settings;
+	.portfolioThumbnails {
+		.portfolioThumbnails__settings;
 
 		.thumbnail (@thumbnailX, @thumbnailY) {
 			width: @thumbnailSideLength;
@@ -125,7 +124,7 @@
 			.thumbnail (1*@thumbnailSideLength, 0*@thumbnailSideLength);
 		}
 		&--3 {
-			.thumbnail (2*@thumbnailSideLength, 0*@thumbnailSideLength);
+			.thumbnail (2*@thumbnailSideLength+1, 0*@thumbnailSideLength);
 		}
 		&--4 {
 			.thumbnail (0*@thumbnailSideLength, 1*@thumbnailSideLength);

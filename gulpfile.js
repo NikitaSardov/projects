@@ -141,6 +141,7 @@ gulp.task('header_final', function(){
 gulp.task('css_final', function(){
   return gulp.src(css.final)
 	.pipe(plugins.concat('css/style.css'))
+// 				.pipe(gulp.dest('dev/css'))
 	.pipe(plugins.less())
 	.pipe(plugins.autoprefixer({
 		browsers: ['last 2 version'],
