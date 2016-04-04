@@ -1,3 +1,4 @@
+@media all {
 	.contact {
  		z-index: 1;
 		position: relative;
@@ -83,7 +84,7 @@
 			color: @contact__textColor;
 		}
 		
-		input[type="text"] {
+		&__inputField {
 			display: inline-block;
 			width: 45%;
 			height: 40px;
@@ -157,3 +158,71 @@
 			transform: skewY(-24deg);
 		} 
 	}
+}
+
+@media (max-width: 900px) {
+	.contact {
+		&__content {
+		}
+
+		&__column {
+		
+			&--address {
+				display: inline-block;
+				position: relative;
+				margin-top: 45px;
+				width: 300px;
+				left: 5px;
+				text-align: left;
+			}
+			
+			&--input {
+				display: inline-block;
+				margin-top: 45px;
+				width: 300px;
+				left: 5px;
+				text-align: left;
+			}
+		}
+		
+		&__headline {
+		}
+			
+		&__contact--address {
+		}
+		
+		&__contact--tel {
+		}
+		
+		&__contact--email {
+		}
+		
+		&__contact--site{
+		}
+		
+		&__inputField {
+			
+			width: 96%;
+			height: 40px;
+			margin: 3px 0px 3px;
+			&:focus {
+				border: 3px solid #40c4a4;
+			}
+		}
+		
+		&__message {
+			height: 100px;
+		}
+		&__button {
+			margin:28px 0 5px;
+			padding: 10px 0 10px 0px;
+			width: 310px;
+		}
+		
+		&__skewedBackgroundUpLeft {
+		} 
+				
+		&__skewedBackgroundUpRight {
+		} 
+	}
+}

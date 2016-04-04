@@ -1,3 +1,4 @@
+@media all {
 	.blog {
 		z-index: 2;
 		position: relative;
@@ -157,3 +158,47 @@
 			}	
 		}
 	}
+}
+
+@media (max-width: 900px) {
+	.blog {	
+		&__skewedBackgroundUp {
+		} 
+		
+		&__skewedBackgroundDown {
+		}
+			
+	@thumbnailSideLength: 368px;
+	.blog__articles {
+		max-width: 95%;
+		margin: 30px 5px 0;
+	}
+		&__articlePreview {
+			margin: 12px 0px;
+		}
+
+		&__rotatedSquare {
+		}
+		
+		&__date {
+			&--day {
+			}
+			&--month {
+			}
+		}	
+	
+		&__articleName {
+			width: 300px;
+		}
+
+		&__articleDescription {
+			width: 300px;
+		}
+		
+		&__social {
+			width: 300px;
+			&Button {
+			}
+		}
+	}
+}
