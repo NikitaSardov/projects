@@ -1,3 +1,4 @@
+@media all {
 	.process {
 		z-index: 2; /*над краем фона предыдущего блока*/
 		position: relative; 
@@ -78,3 +79,21 @@
 			}
 		}
 	}
+}
+
+@media (max-width: 900px) {
+	.process {
+		&__skewedBackgroundUp {
+		} 
+				
+		&__skewedBackgroundDown {
+		} 	
+		&__image {
+			&--arrowRight {
+				display: none;
+				margin: 5px 5px;
+				min-width: 17px;
+			}
+		}
+	}
+}

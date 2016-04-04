@@ -1,3 +1,4 @@
+@media all {
 	.education {
 		z-index: -2; /*под краем фона предыдущего блока*/
 		position: relative;
@@ -70,4 +71,35 @@
 			padding: 20px 20px;
 			border-radius: 0 0 3px 3px;
 		}
+	}
+}
+
+@media (max-width: 900px) {
+	.education {
+		&__content {
+		}
+
+		&__column {
+			width: 300px;
+			margin: 47px 5px 0;
+		}
+		&__period {
+		}
+		
+		&__status {
+		}		
+		
+		&__triangle {
+		}
+		
+		&__degree {
+		}		
+		
+		&__university {
+		}		
+
+		&__description {
+			padding: 30px 20px;
+		}
+	}
 }

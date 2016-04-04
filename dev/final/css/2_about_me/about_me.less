@@ -1,4 +1,5 @@
-﻿	.aboutMe {
+﻿@media all {
+	.aboutMe {
 		position: relative;
 		width: 100%;
 		text-align: center;
@@ -45,6 +46,18 @@
 				background-position: -5*@spriteSideLength;
 			}
 		}
+	}
+}
+
+@media (max-width: 900px) {
+	.aboutMe {
+		&__content {
+			text-align: justify;
+			word-spacing: -0.2ex;
 		}
-	
 		
+		&__social {
+			transform: scale(0.8);
+		}
+	}
+}

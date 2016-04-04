@@ -2,6 +2,7 @@
 @sans-serif: 'Raleway', Arial, sans-serif;
 @header__textColor: white;
 
+@media all {
 	body {
 		width: 100%;
 		font-family: @sans-serif;
@@ -25,10 +26,6 @@
 		background-size: contain;
 		}
 	
-		&__hamburger:hover {
-			border: 2px solid white;
-			border-radius: 3px;
-		}
 
 		&__hamburger {
 		position: absolute;
@@ -39,10 +36,14 @@
 		background-position: center;
 		border: 2px solid transparent;
 		right: 93px;
-		top: 32px;
+		top: 34px;
 		padding: 5px 10px;
 		width: 30px;
 		height: 28px;
+			&:hover {
+				border: 2px solid white;
+				border-radius: 3px;
+			}
 		}
 		
 		&__centeredContent {
@@ -115,6 +116,58 @@
 				border-color: #52edc7;
 				border-bottom: 2px solid #fff;				
 			}
+		}		
+	}
+}
+
+@media (max-width: 900px) {
+	.header {
+		height: 100%;	
+		&__hamburger {
+			right: 20px;
+		}
+				
+		&__logo {
+		left: 20px;
 		}
 		
+		&__centeredContent {
+			padding-top: 100px;
+		}
+
+		&__avatar {
+		&Image {
+			width: 180px;
+			height: 180px;
+			}
+		}
+		
+		&__content {
+			padding: 10px;
+			text-align: center;
+		}
+				
+		&__boldText {
+			font-size: 32px;
+			letter-spacing: 5px;
+		}
+				
+		&__line {
+		}
+				
+		&__upperCaseText {
+			font-size: 35px;
+		}
+			
+		&__button {
+			margin:28px auto 5px;
+			padding: 18px 0 17px 0px;
+			&:active {
+				color: #206957;
+				background-color: #52edc7;
+				border-color: #52edc7;
+				border-bottom: 2px solid #fff;				
+			}
+		}	
 	}
+}

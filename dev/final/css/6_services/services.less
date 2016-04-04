@@ -1,3 +1,4 @@
+@media all {
 	.services {
 		z-index: 0; /*над краем фона предыдущего блока*/
 		position: relative;
@@ -85,4 +86,23 @@
 			color: #888b90;
 			background-color: #fff;
 		}
-}	
+	}	
+}
+
+
+@media (max-width: 900px) {
+	.services {
+		&__skewedBackgroundUp {
+		} 
+				
+		&__skewedBackgroundDown {
+		} 
+		
+		&__content {
+		}
+		&__column {
+			width: 300px;
+			margin: 40px 5px 0;
+		}
+	}	
+}

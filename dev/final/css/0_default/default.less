@@ -1,3 +1,4 @@
+@media all {
 	.default {
 		&__button--noDecoration {
 			text-decoration: none;
@@ -226,3 +227,236 @@
 			}			
 		}
 	}
+}
+	
+	
+@media (max-width: 900px) {
+	.default {
+		&__button--noDecoration {
+			text-decoration: none;
+			color: inherit;
+		}
+		
+		&__title {
+			.title () {
+				margin-top: 4px;
+				padding: 45px 0 23px 21px;
+				font-family: @sans-serif;
+				font-weight: 500;
+				font-size: 32px;
+				letter-spacing: 10px;
+			}
+			&--aboutMe {
+				.title;
+				color: @aboutMe__textColor;
+			}
+			&--mySkills {
+				.title;
+				padding-top: 33px;
+			}
+			&--education {
+				.title;
+				margin: 0;
+				padding-top: 100px;
+			}
+			&--workExperience {
+				.title;
+				padding-top: 55px;
+				margin-top: 0px;
+			}
+			&--services {
+				.title;
+				margin-top: 0;
+				padding-top: 27px;
+			}
+			&--portfolio {
+				.title;
+				margin-top: 0;
+				color: @portfolio__textColor;
+				padding-top: 104px;
+			}
+			&--process {
+				.title;
+				margin: 0;
+				padding-top: 25px;
+				color: @process__textColor;
+			}
+			&--testimonial {
+				.title;
+				margin: 0px;
+				padding-top: 40px;				
+				color: @testimonial__textColor;
+			}
+			&--testimonialClients {
+				.title;
+				margin-top: 14px;
+				padding: 35px 0 7px 0;
+				font-family: @sans-serif;
+				font-weight: 500;
+				font-size: 18px;
+				letter-spacing: 1px;
+			}
+			&--blog {
+				.title;
+				padding-top: 20px;
+				margin-top: 0px;
+				color: @blog__textColor;
+			}
+			&--contact {
+				.title;
+				padding-top: 79px;
+				margin: 0px;
+				color: @contact__textColor;
+			}
+		}
+		&__line {
+			.line () {
+				display: inline-block;
+				width: 6%;
+				height: 1px;
+				border: 0;
+			}
+			&--aboutMe {
+				.line;
+				background-color: @aboutMe__textColor;
+			}
+			&--mySkills {
+				.line;
+				background-color: @mySkills__textColor;
+			}
+			&--education {
+				.line;
+				background-color: @education__textColor;
+			}
+			&Education--gray {
+				/* align: center; */
+				width: 13%;	
+				height: 2px;
+				border: 0;
+				background-color: #dcdcdf;
+				margin: 61px auto 0;
+			}
+			&--workExperience {
+				.line;
+				background-color: @workExperience__textColor;	
+			}
+			&--services {
+				.line;
+				background-color: @services__textColor;	
+			}
+			&--portfolio {
+				.line;
+				background-color: @portfolio__textColor;	
+			}
+			&--process {
+				.line;
+				background-color: @process__textColor;	
+			}
+			&--testimonial {
+				.line;
+				background-color: @testimonial__textColor;
+			}
+			&--testimonialClients {
+				.line;
+				width: 200px;
+				background-color: #52edc7;
+			}
+			&--blog {
+				.line;
+				background-color: @blog__textColor;
+			}
+			&--blogPreview {
+				.line;
+				margin: 0 14px;
+				width: 100px;
+				background-color: #dedede;
+			}			
+			&--contact {
+				.line;
+				background-color: @contact__textColor;	
+			}
+			&--contactLine {
+				.line;
+				width: 200px;
+				margin: 15px 0 45px;
+				background-color: @contact__textColor;	
+			}
+			&--downloadMyResume {
+				.line;
+				margin-top: 10px;
+				width: 90px;
+				background-color: @downloadMyResume__textColor;
+			}			
+		}
+				
+		&__symbols {
+			.symbol () {
+				display: inline-block;
+				background: url("../img/default__symbols.png") no-repeat;
+				vertical-align: -15px;
+				margin: 0 30px 0;
+				width: 22px;
+				height: 25px;
+				/* background-color: green; */
+			}
+			&--aboutMe {
+				.symbol;
+				background-position: 0;
+				margin-left: 35px;
+			}
+			&--mySkills {
+				.symbol;
+				background-position: -22px;
+			}
+			&--education {
+				.symbol;
+				background-position: -45px;
+			}
+			&--workExperience {
+				.symbol;
+				background-position: -69px;
+			}
+			&--services {
+				.symbol;
+				background-position: -93px;
+			}
+			&--portfolio {
+				.symbol;
+				padding: 0 4px;
+				background-position: -114px;
+			}
+			&--process {
+				.symbol;
+				padding: 0 2px;
+				background-position: -143px;
+			}
+			&--testimonial {
+				.symbol;
+				padding: 0 2px;
+				background-position: -169px;
+			}
+			&--blog {
+				.symbol;
+				padding: 0;
+				background-position: -194px;
+			}			
+			&--contact {
+				.symbol;
+				padding: 0 2px;
+				background-position: -215px;
+			}
+			&--contactSend {
+				.symbol;
+				padding: 0 8px;
+				margin: 0;
+				vertical-align: -8px;
+				background-position: -266px;
+			}
+			&--downloadMyResume {
+				.symbol;
+				padding: 0 2px;
+				background-position: -242px;
+			}			
+		}
+	}
+}

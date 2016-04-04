@@ -1,3 +1,4 @@
+@media all {
  	.testimonial {
 		z-index: 1; /*под краем фона предыдущего блока*/
 		position: relative;
@@ -151,3 +152,89 @@
 			}
 		}
 	}
+}
+
+@media (max-width: 900px) {
+ 	.testimonial {
+		&__content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			max-width: 1300px;
+			font-family: Lato;
+			font-size: 17px;
+			font-weight: 300;
+			color: #888b90;
+			margin: 0 auto;
+		}
+		
+		&__arrow {
+			.arrow (@angle) {
+				display: inline-block;
+				position: relative;
+				margin: 0;
+				height: 18px;
+				width: 18px;
+				border: solid #d8d8d8;
+				border-width: 4px 0 0 4px;
+				transform: rotate(@angle);
+				transition-property: transform color;
+				transition-duration: .5s;
+				&:hover {
+					border-color: #2b2b2b;
+					transform: scale(1.1) rotate(@angle);
+				}
+			}
+			&--left {
+				.arrow (-45deg);
+			}
+			&--right {
+				.arrow (135deg);
+			}
+		}
+
+		&__contentBox {
+				width: 300px;
+		}
+			
+		&__avatar {
+			display: block;
+			margin: 0px auto;
+		}
+		
+		&__feedback {
+			display: block;
+ 			top: 0px;	
+		}
+		
+		.feedback {
+		
+			&__quote {
+				display: none;
+			}
+			
+			&__signature {
+			}
+		}
+		
+		&__clients {	
+			.client (@sprite) {
+				margin: 15px 35px 0;
+			}
+			
+			@sprite: -220px;
+			&--1 {
+				.client(0);
+			}
+			
+			&--2 {
+				.client(1*@sprite);
+			}
+			
+			&--3 {
+				.client(2*@sprite);
+			}
+		}
+	}
+}
