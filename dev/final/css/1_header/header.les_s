@@ -107,6 +107,8 @@
 			font-size: 14px;
 			letter-spacing: 1.3px;
 			color: @header__textColor;
+			transition-property: all;
+			transition-duration: .2s;
 			&:hover {
 				color: #206957;
 				background-color: #52edc7;
