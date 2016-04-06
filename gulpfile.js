@@ -11,26 +11,38 @@ var gulp        = require('gulp');
     pngquant = require('imagemin-pngquant');
 	browserSync = require('browser-sync');
 	reload  = browserSync.reload;
+	pathToPublish = '../../../xampp/htdocs/library';
+	pathToBuild = 'build/library';
 	html = {
 		cosmos:['dev/cosmos/index.html'],
 		psd_1:['dev/psd-1/index.html'],
-		final:['dev/final/index.html']
+		final:['dev/final/index.html'],
+		library:['dev/library/index.html']
 	};
+	
+	php = {
+		library:['dev/library/*.php']
+	};	
+	
 	js = {
-		final:['dev/final/js/*.*']
+		library:['dev/library/js/*.*']
 	};
+	
 	css	= {
 		cosmos:['dev/cosmos/**/*.*ss'],
 		header_cosmos: ['dev/cosmos/css/header/header.les_s'],
 		psd_1:['dev/psd-1/**/*.*ss'],
 		header_psd_1: ['dev/psd-1/css/header/header.les_s'],
 		final:['dev/final/**/*.*ss'],
-		header_final: ['dev/final/css/1_header/header.les_s']
+		header_final: ['dev/final/css/1_header/header.les_s'],
+		library: ['dev/library/css/styles.css']
 	};
+	
 	img	= {
 		cosmos:['dev/cosmos/img/*.*'],
 		psd_1:['dev/psd-1/img/*.*'],
-		final:['dev/final/img/*.*']
+		final:['dev/final/img/*.*'],
+		library: ['dev/library/img/*.*']
 	};
 
 //////////
@@ -54,16 +66,35 @@ gulp.task('html_final', function(){
     .pipe(reload({stream:true}))
 	.pipe(plugins.notify('FINAL HTML built! Check new files'));
 });
-
-
-//////////
-// JS //
-//////////
-gulp.task('js_final', function(){
-  return gulp.src(js.final)
-    .pipe(gulp.dest('build/final/js'))
+gulp.task('html_library', function(){
+  return gulp.src(html.library)
+    .pipe(gulp.dest('build/library'))
+	.pipe(gulp.dest(pathToPublish))
     .pipe(reload({stream:true}))
-	.pipe(plugins.notify('JS built! Check new files'));
+	.pipe(plugins.notify('Library HTML built.'));
+});
+
+//////////
+// PHP  //
+//////////
+gulp.task('php_library', function(){
+  return gulp.src(php.library)
+    .pipe(gulp.dest('build/library'))
+    .pipe(gulp.dest(pathToPublish))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('Library PHP built.'));
+});
+
+
+//////////
+// JS   //
+//////////
+gulp.task('js_library', function(){
+  return gulp.src(js.library)
+    .pipe(gulp.dest('build/library/js'))
+    .pipe(gulp.dest(pathToPublish+'/js'))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('Library JS built.'));
 });
 
 //////////////	
@@ -154,6 +185,24 @@ gulp.task('css_final', function(){
 });
 
 
+
+
+gulp.task('css_library', function(){
+  return gulp.src(css.library)
+//	.pipe(plugins.concat('css/styles.css'))
+// 				.pipe(gulp.dest('dev/css'))
+	.pipe(plugins.less())
+	.pipe(plugins.autoprefixer({
+		browsers: ['last 2 version'],
+		cascade: false
+	}))
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest('build/library/css'))
+    .pipe(gulp.dest(pathToPublish+'/css'))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('Library CSS built.'));
+});
+
 /////////	
 // IMG //
 /////////
@@ -196,6 +245,20 @@ gulp.task('img_final', function(){
 /* 	.pipe(plugins.notify('psd-1 IMG built! Check new files')); */
 });
 
+gulp.task('img_library', function(){
+  return gulp.src(img.library)
+  	.pipe(plugins.imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox:false}],
+		use: [pngquant()],
+		interlaced: true
+	}))
+    .pipe(gulp.dest('build/library/img'))
+    .pipe(gulp.dest(pathToPublish+'/img'))
+    .pipe(reload({stream:true}))
+/* 	.pipe(plugins.notify('psd-1 IMG built! Check new files')); */
+});
+
 // ////////////////////////////////////////////////
 // Browser-Sync
 // // /////////////////////////////////////////////
@@ -232,6 +295,17 @@ gulp.task('bsync_final', function() {
   });
 });
 
+gulp.task('bsync_library', function() {
+  browserSync({
+    server: {
+      baseDir: "./build/library"
+    },
+    port: 8080,
+    open: true,
+    notify: true
+  });
+});
+
 
 gulp.task('watcher_cosmos', function(){
   gulp.watch(html.cosmos, ['html_cosmos']);
@@ -257,7 +331,13 @@ gulp.task('watcher_final', function(){
   gulp.watch(img.final, ['img_final']);
 });
 
-
+gulp.task('watcher_library', function(){
+  gulp.watch(html.library, ['html_library']);
+  gulp.watch(php.library, ['php_library']);
+  gulp.watch(js.library, ['js_library']);
+  gulp.watch(css.library, ['css_library']);
+  gulp.watch(img.library, ['img_library']);
+});
 
 
 gulp.task('compile_cosmos', ['html_cosmos', 'header_cosmos', 'css_cosmos', 'img_cosmos']);
@@ -266,8 +346,12 @@ gulp.task('compile_psd_1', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_
 
 gulp.task('compile_final', ['html_final', 'header_final', 'css_final', 'img_final']);
 
+gulp.task('compile_library', ['html_library', 'php_library', 'js_library', 'css_library', 'img_library']);
+
 //gulp.task('default', ['html_cosmos', 'header_cosmos', 'css_cosmos', 'img_cosmos', 'watcher_cosmos', 'bsync_cosmos']); 
 
 //gulp.task('default', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_1', 'watcher_psd_1', 'bsync_psd_1']); 
 
-gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
+//gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
+
+gulp.task('default', ['html_library', 'php_library', 'js_library', 'css_library', 'img_library', 'watcher_library', 'bsync_library']); 
