@@ -21,7 +21,7 @@ var gulp        = require('gulp');
 	};
 	
 	php = {
-		library:['dev/library/*.php']
+		library:['dev/library/**/*.php']
 	};	
 	
 	js = {

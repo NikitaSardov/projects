@@ -1,3 +1,7 @@
+body{
+    font-family:sans-serif;
+}
+
 form {
     margin: 0 auto;
     padding: 20px;
@@ -64,10 +68,10 @@ h1 {
     background: green;
 }
 
-.focus:focus {
+.focused:focus {
     border: 3px solid tomato;
 }
 
-.focus:valid {
+.focused:valid {
     border: 3px solid green;
 }
