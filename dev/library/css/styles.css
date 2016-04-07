@@ -2,7 +2,7 @@ body{
     font-family:sans-serif;
 }
 
-form {
+.form {
     margin: 0 auto;
     padding: 20px;
     width: 250px; 
@@ -29,6 +29,19 @@ form {
 h1 {
     padding: 0;
     margin: 10px 0 20px;
+}
+
+.title{
+    margin: 0px 0 5px;    
+}
+
+.author {
+    margin: 5px 0 5px;
+}
+
+.bookAdded {
+    margin: 5px 0 2px;
+    font-size: 12px;
 }
 
 .button { 

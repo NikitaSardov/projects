@@ -1,6 +1,9 @@
 <?php
     require_once("database.php");
-    require_once("models/articles.php");
+    require_once("models/books.php");
 
-    $articles = articles_all();
+    $link = db_connect();
+    $books = books_all($link);
+
+    include("views/catalog.php");
 ?>

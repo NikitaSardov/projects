@@ -1,16 +1,17 @@
 <?php
-//echo time();
+    define('MYSQL_SERVER', 'localhost');
+    define('MYSQL_USER', 'root');
+    define('MYSQL_PASSWORD', '');
+    define('MYSQL_DB', 'library');
 
-function add ($param1, $param2) {
-    return $param1 + $param2;
+function db_connect() {
+    $link = mysqli_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB)
+        or die("Error: ".mysqli_error($link));
+    if(!mysqli_set_charset($link, "utf8")){
+        printf("Error: ".mysqli_error($link));
+    }
+    
+    return $link;
 }
-$a = $_GET['a'];
-$b = $_GET['b'];
 
-echo add ($a, $b);
-
-echo "<br>";
-for($i=0;$i<10;$i++){
-    echo $i."<br>";
-}
 ?>
