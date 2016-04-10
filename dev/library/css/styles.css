@@ -13,6 +13,28 @@ body{
     transition-duration: .3s;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+    width: 100%;
+}
+
+.book_container {
+    height: 280px;
+    overflow: scroll;
+    border: 1px solid #eee;
+    padding: 5px;
+}
+
+.warning {
+    color: tomato;
+}
+
 .inputField--description, .inputField--author {
     margin-bottom: 10px;
     width: 100%;
@@ -26,13 +48,31 @@ body{
     transition-duration: .3s;
 }
 
+.inputField--content{
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 2px 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    vertical-align: middle;
+    resize: none;
+    transition-property: all;
+    transition-duration: .3s;
+}
+
 h1 {
     padding: 0;
-    margin: 10px 0 20px;
+    margin: 5px 0 10px;
+}
+
+h2 {
+    padding: 0;
+    margin: 5px 0 5px;
 }
 
 .title{
-    margin: 0px 0 5px;    
+    margin: 0px 0 5px;
+    font-weight: 300;
 }
 
 .author {
@@ -44,10 +84,17 @@ h1 {
     font-size: 12px;
 }
 
+.adminElement {
+    display: inline-block;
+    background-color: lawngreen;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
 .button { 
     
     display: block;
-    margin: 10px auto 0;
+    margin: 10px auto;
     padding: 6px 15px;
     width: 100%;
     height: auto;
@@ -81,7 +128,7 @@ h1 {
     background: green;
 }
 
-.focused:focus {
+.focused:focus, .focused:invalid {
     border: 3px solid tomato;
 }
 

@@ -11,8 +11,14 @@ var gulp        = require('gulp');
     pngquant = require('imagemin-pngquant');
 	browserSync = require('browser-sync');
 	reload  = browserSync.reload;
+
 	pathToPublish = '../../../xampp/htdocs/library';
 	pathToBuild = 'build/library';
+	
+	ht = {
+		library:['dev/library/**/.ht*']
+	};
+
 	html = {
 		cosmos:['dev/cosmos/index.html'],
 		psd_1:['dev/psd-1/index.html'],
@@ -79,12 +85,22 @@ gulp.task('html_library', function(){
 //////////
 gulp.task('php_library', function(){
   return gulp.src(php.library)
-    .pipe(gulp.dest('build/library'))
+    .pipe(gulp.dest(pathToBuild))
     .pipe(gulp.dest(pathToPublish))
     .pipe(reload({stream:true}))
 	.pipe(plugins.notify('Library PHP built.'));
 });
 
+//////////
+// .ht*  //
+//////////
+gulp.task('ht_library', function(){
+  return gulp.src(ht.library)
+    .pipe(gulp.dest(pathToBuild))
+    .pipe(gulp.dest(pathToPublish))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('Library .ht* built.'));
+});
 
 //////////
 // JS   //
@@ -334,9 +350,10 @@ gulp.task('watcher_final', function(){
 gulp.task('watcher_library', function(){
   gulp.watch(html.library, ['html_library']);
   gulp.watch(php.library, ['php_library']);
-  gulp.watch(js.library, ['js_library']);
+  gulp.watch(ht.library, ['ht_library']);
+//  gulp.watch(js.library, ['js_library']);
   gulp.watch(css.library, ['css_library']);
-  gulp.watch(img.library, ['img_library']);
+//  gulp.watch(img.library, ['img_library']);
 });
 
 
@@ -346,7 +363,7 @@ gulp.task('compile_psd_1', ['html_psd_1', 'header_psd_1', 'css_psd_1', 'img_psd_
 
 gulp.task('compile_final', ['html_final', 'header_final', 'css_final', 'img_final']);
 
-gulp.task('compile_library', ['html_library', 'php_library', 'js_library', 'css_library', 'img_library']);
+gulp.task('compile_library', ['html_library', 'php_library', 'ht_library', 'js_library', 'css_library', 'img_library']);
 
 //gulp.task('default', ['html_cosmos', 'header_cosmos', 'css_cosmos', 'img_cosmos', 'watcher_cosmos', 'bsync_cosmos']); 
 
@@ -354,4 +371,4 @@ gulp.task('compile_library', ['html_library', 'php_library', 'js_library', 'css_
 
 //gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
 
-gulp.task('default', ['html_library', 'php_library', 'js_library', 'css_library', 'img_library', 'watcher_library', 'bsync_library']); 
+gulp.task('default', ['html_library', 'php_library', 'ht_library', /*'js_library', */'css_library', /*'img_library',*/ 'watcher_library' /*, 'bsync_library'*/]); 

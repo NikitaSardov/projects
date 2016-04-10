@@ -9,15 +9,14 @@
         <title>Библиотека</title>
     </head>
     <body>
-			<form class="form" action="/hello" method="post">
+			<form class="form" action="../index.php" method="post">
 		      <h1>Библиотека</h1>
-                <input class="inputField--description focused" type="search" placeholder="Название книги" required autofocus>
-				<input class="inputField--author focused" type="search" placeholder="Автор" required>
-
+                <input class="inputField--description focused" name="title" type="search" placeholder="Название книги" required autofocus>
+				<input class="inputField--author focused" name="author" type="search" placeholder="Автор">
+                <input name="date" type="hidden" value="<?=date('Y-m-d H:i:s')?>">
 				<button class="button" type="submit"><span class="default__symbols--contactSend"></span>Добавить книгу</button>
                 <button class="button--shy" type="submit"><span class="default__symbols--contactSend"></span>Отмена</button>
 			</form>
 
-		<!--link rel="stylesheet" href="css/styles.css" type="text/css" property="value" /-->
     </body>
 </html>
