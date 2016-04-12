@@ -7,26 +7,33 @@
         <title>БИБЛИОТЕКА.каталог</title>
     </head>
     <body>
-        <div class="form">
+        <div class="default__container">
             <h1>Библиотека</h1>
             <h2>Каталог</h2>
-            <div class="book_container">
-            <?php $num=0;?>
-            <?php foreach($books as $a): ?>
-        
-            <div class="book__title">
-                <a href="book.php?id=<?=$a['id']?>">
-                    <h3 class="title">"<?=intro($a['title'], 36)?>"</h3>
-                    <h4 class="author"><?=$a['author']?></h4></div>
-                    <p class="bookAdded">Книга добавлена: <?=$a['date']?></p><br>
+            <div class="catalog__listContainer">
+                <?php $num=0; foreach($books as $a): ?>
+
+                <a class="default__link--nodecoration" href="book.php?id=<?=$a['id']?>">
+                    <div class="catalog__bookCard">
+                        <h3 class="catalog__bookTitle">"<?=intro($a['title'], 36)?>"</h3>
+                        <h4 class="catalog__bookAuthor"><?=$a['author']?></h4>
+                        <p class="default__bookInfo">Книга добавлена: <?=intro($a['date'],16)?>
+                        <?php if (!empty($a['contributor'])) echo '<br>Добавил: '.$a['contributor'];?></p>
+                    </div>
                 </a>
-                <?php $num++;?>
-            <?php endforeach ?>
+                <?php $num++; endforeach ?>
             </div>
-            Книг в базе: <?php echo $num; ?><br>
-		<a href="index.php?action=add"><button class="button" type="submit"><span class="default__symbols--contactSend"></span>Добавить книгу</button></a>
-            <a href="admin"><button class="button--shy"><span class="default__symbols--contactSend"></span>Администрировать</button></a>
-            
+            <div class="default__bookInfo">Книг в базе: <?php echo $num; ?></div><br>
+            <a class="default__link--nodecoration" href="admin/index.php?action=add">
+                <button class="default__button" type="submit">
+                    <span class="default__symbols--contactSend"></span>Добавить книгу
+                </button>
+            </a>
+            <a class="default__link--nodecoration" href="admin">
+                <button class="default__button">
+                    <span class="default__symbols--contactSend"></span>Редактировать
+                </button>
+            </a>
         </div>
     </body>
 </html> 

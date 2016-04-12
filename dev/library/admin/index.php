@@ -11,8 +11,10 @@
 
     if($action == "add") {
         if(!empty($_POST)){
-            books_new($link, $_POST['title'], $_POST['author'], $_POST['content'], $_POST['date']);
-            header("Location: index.php");
+            books_add($link, $_POST['title'], $_POST['author'], $_POST['description'], $_POST['date'], $_POST['contributor'], $_POST['contributor_IP']);
+            if (isset($_GET['admin'])) header("Location: index.php"); 
+            else header("Location: ../index.php");
+            
         }
         include("../views/book_add.php");
         
@@ -24,7 +26,7 @@
         $id = (int)$_GET['id'];
         
         if(!empty($_POST) && $id > 0){
-            books_edit($link, $id, $_POST['title'], $_POST['author'], $_POST['content'], $_POST['date']);
+            books_edit($link, $id, $_POST['title'], $_POST['author'], $_POST['description'], $_POST['change_date'], $_POST['editor_IP']);
             header("Location: index.php");
         }        
         $books = books_get($link, $id);

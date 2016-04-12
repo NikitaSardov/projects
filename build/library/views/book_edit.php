@@ -6,20 +6,40 @@
 		<style>
 		</style>
 		<link href="../css/styles.css" rel="stylesheet" type="text/css" />
-        <title>Библиотека</title>
+        <title>Библиотека</title
     </head>
     <body>
-			<form method="post" class="form" action="index.php?action=edit&id=<?=$books['id']?>">
-                <h1>Библиотека</h1>
-                <h2>Редактировать</h2>
-                <input class="inputField--description focused" name="title" type="text" placeholder="Название книги" value="<?=$books['title']?>" required>
-				<input class="inputField--author focused" name="author" type="text" placeholder="Автор" value="<?=$books['author']?>" required><br>
-                <textarea class="inputField--content focused" name="content" placeholder="Фрагмент (по желанию)"><?=$books['content']?></textarea>
-                <small>Дата последнего изменения: <?=$books['date']?></small>
-                <input name="date" type="hidden" value="<?=date('Y-m-d H:i:s')?>">
-                <a href="index.php" class="button"><!--span class="default__symbols--contactSend"></span-->Отмена</a>            
-				<button class="button--shy" type="submit"><span class="default__symbols--contactSend"></span>Сохранить изменения</button>
+        <div class="default__container">
+            <h2>Редактировать книгу</h2>
+            <form method="post" action="index.php?action=edit&id=<?=$books['id']?>">
+                <input class="input__title input" name="title" type="text" placeholder="Название книги" value="<?=$books['title']?>" required>
+				<input class="input__author input" name="author" type="text" placeholder="Автор" value="<?=$books['author']?>"><br>
+                <textarea class="input__description input" name="description" placeholder="Фрагмент (по желанию)"><?=$books['description']?></textarea>
+                <div class="default__bookInfo">Исправление: <?=$books['change_date']?><br>
+                Добавление: <?=$books['date']?></div>
+                <input name="change_date" type="hidden" value="<?=date('d-m-Y H:i:s')?>">
+                <input name="editor_IP" type="hidden" value="<?=$_SERVER['REMOTE_ADDR']?>">
+				<button class="default__button" type="submit"><span class="default__symbols--contactSend"></span>Сохранить</button>
 			</form>
+            <a class="default__link--nodecoration default__button" href="<?php if(isset($_GET['admin'])) echo 'index.php'; 
+                        else echo '../index.php';?>"><!--span class="default__symbols--contactSend"></span-->Отмена</a>
+        </div>
+        <!--script>        
+        if (window.localStorage) {
+          var elements = document.querySelectorAll('[name]');
 
+          for (var i = 0, length = elements.length; i < length; i++) {
+            (function(element) {
+              var name = element.getAttribute('name');
+
+              element.value = localStorage.getItem(name) || '';
+
+              element.onkeyup = function() {
+                localStorage.setItem(name, element.value);
+              };
+            })(elements[i]);
+          }
+        }
+        </script-->        
     </body>
 </html>

@@ -40,20 +40,23 @@
 
 
 
-    function books_new($link, $title, $author, $content, $date){
+    function books_add($link, $title, $author, $description, $date, $contributor, $contributor_IP){
     //prepare
     $title = trim($title);
     $author = trim($author);
-    $content = trim($content);
+    $description = trim($description);
+    $contributor = trim($contributor);
+        
+//    if (empty($contributor)) $contributor = 'Доброжелатель, опознанный по IP';
         
     //check
     if ($title == '') 
         return false;
         
     //request
-    $t = "INSERT INTO books (title, author, content, date) VALUES ('%s', '%s', '%s', '%s')";
+    $t = "INSERT INTO books (title, author, description, date, change_date, contributor, contributor_IP) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')";
         
-    $query =  sprintf($t, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $author), mysqli_real_escape_string($link, $content), mysqli_real_escape_string($link, $date));
+    $query =  sprintf($t, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $author), mysqli_real_escape_string($link, $description), mysqli_real_escape_string($link, $date), mysqli_real_escape_string($link, 'не редактировалась'), mysqli_real_escape_string($link, $contributor), mysqli_real_escape_string($link, $contributor_IP));
         
     ///    echo $query;
         $result = mysqli_query($link, $query);
@@ -64,12 +67,12 @@
         return true;
     }
 
-    function books_edit($link, $id, $title, $author, $content, $date){
+    function books_edit($link, $id, $title, $author, $description, $change_date, $editor_IP){
         //prepare
         $id = (int)$id;
         $title = trim($title);
         $author = trim($author);
-        $content  = trim($content);
+        $description  = trim($description);
         
         
         //check
@@ -77,9 +80,9 @@
             return false;
         
         //request
-        $sql = "UPDATE books SET title='%s', author='%s', content='%s', date='%s' WHERE id='%d'";
+        $sql = "UPDATE books SET title='%s', author='%s', description='%s', change_date='%s', editor_IP='%s' WHERE id='%d'";
         
-        $query = sprintf($sql, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $author), mysqli_real_escape_string($link, $content), mysqli_real_escape_string($link, $date), $id);
+        $query = sprintf($sql, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $author), mysqli_real_escape_string($link, $description), mysqli_real_escape_string($link, $change_date), mysqli_real_escape_string($link, $editor_IP), $id);
         
         $result = mysqli_query($link, $query);
         

@@ -7,16 +7,25 @@
         <title>БИБЛИОТЕКА.книга</title>
     </head>
     <body>
-        <div class="form">
-        <h1>Библиотека</h1>
-        <h2>"<?=$book['title']?>"</h2>
-        <h3><?=$book['author']?></h3>
-        Книга добавлена: <?=$book['date']?><br>
-        
-        <p class="book_container"><?=$book['content']?></p>
-            
-		<a href="index.php?action=add"><button class="button" type="submit"><span class="default__symbols--contactSend"></span>Добавить книгу</button></a>
-        <a href="index.php"><button class="button--shy"><span class="default__symbols--contactSend"></span>В каталог</button></a>
+        <div class="default__container">
+            <h1 class="default__header--1<?php if(isset($_GET['admin'])) echo ' warning';?>">Библиотека</h1>
+            <h2 class="default__header--1">"<?=$book['title']?>"</h2>
+            <h3><?=$book['author']?></h3>
+
+<?php               if(isset($_GET['admin'])) 
+                        echo '<small>Исправлена: '.$book['change_date'].'</small><br>
+                              <small>Добавлена: '.$book['date'].'</small><br>';
+                    else
+                        echo '<small>Добавлена: '.intro($book['date'],16).'</small><br>';
+
+                    if(empty($book['description'])) 
+                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i>'; 
+                    else 
+                        echo '<p class="book_read">'.$book['description'].'</p>';
+?>
+
+            <a class="default__link--nodecoration" href="admin/index.php?action=edit&id=<?=$book['id'];?><?php if(isset($_GET['admin'])) echo '&admin'?>"><button class="default__button" type="submit"><span class="default__symbols--contactSend"></span>Редактировать</button></a>
+            <a class="default__link--nodecoration" href="index.php"><button class="default__button"><span class="default__symbols--contactSend"></span>Каталог</button></a>
         </div>
     </body>
 </html>

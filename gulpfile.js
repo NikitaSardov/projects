@@ -16,7 +16,7 @@ var gulp        = require('gulp');
 	pathToBuild = 'build/library';
 	
 	ht = {
-		library:['dev/library/**/.ht*']
+		library:['dev/library/**/*.ht*']
 	};
 
 	html = {
@@ -99,7 +99,18 @@ gulp.task('ht_library', function(){
     .pipe(gulp.dest(pathToBuild))
     .pipe(gulp.dest(pathToPublish))
     .pipe(reload({stream:true}))
-	.pipe(plugins.notify('Library .ht* built.'));
+	.pipe(plugins.notify('Library *.ht* built.'));
+});
+
+//////////
+// .ttf  //
+//////////
+gulp.task('ttf_library', function(){
+  return gulp.src('dev/library/fonts/*.*')
+    .pipe(gulp.dest(pathToBuild+'/fonts'))
+    .pipe(gulp.dest(pathToPublish+'/fonts'))
+    .pipe(reload({stream:true}))
+	.pipe(plugins.notify('Library FONT built.'));
 });
 
 //////////
@@ -371,4 +382,4 @@ gulp.task('compile_library', ['html_library', 'php_library', 'ht_library', 'js_l
 
 //gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
 
-gulp.task('default', ['html_library', 'php_library', 'ht_library', /*'js_library', */'css_library', /*'img_library',*/ 'watcher_library' /*, 'bsync_library'*/]); 
+gulp.task('default', ['html_library', 'php_library', 'ht_library', 'ttf_library', /*'js_library', */'css_library', 'img_library', 'watcher_library' /*, 'bsync_library'*/]); 

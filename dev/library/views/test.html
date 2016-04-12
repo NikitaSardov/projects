@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<style>
+		</style>
+		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <title>Библиотека</title>
+    </head>
+    <body>
+			<form class="form" action="../index.php" method="post">
+		      <h1>Библиотека</h1>
+                <input class="inputField--description focused" name="title" type="search" placeholder="Название книги" required autofocus>
+				<input class="inputField--author focused" name="author" type="search" placeholder="Автор">
+                <input name="date" type="hidden" value="<?=date('Y-m-d H:i:s')?>">
+				<button class="button" type="submit"><span class="default__symbols--contactSend"></span>Добавить книгу</button>
+                <button class="button--shy" type="submit"><span class="default__symbols--contactSend"></span>Отмена</button>
+			</form>
+
+    </body>
+</html>
+
+
+
+<!--  
+<script>        
+if (window.localStorage) {
+  var elements = document.querySelectorAll('[name]');
+
+  for (var i = 0, length = elements.length; i < length; i++) {
+    (function(element) {
+      var name = element.getAttribute('name');
+
+      element.value = localStorage.getItem(name) || '';
+
+      element.onkeyup = function() {
+        localStorage.setItem(name, element.value);
+      };
+    })(elements[i]);
+  }
+}
+</script>
+-->
