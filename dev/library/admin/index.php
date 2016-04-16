@@ -44,7 +44,7 @@
             header("Location: index.php");
         } 
         
-        $books = books_get($link, $id);
+        $book = books_get($link, $id);
         include("../views/book_delete.php");
 
     } else {

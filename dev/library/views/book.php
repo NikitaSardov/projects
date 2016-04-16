@@ -4,28 +4,46 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> <style></style>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <title>БИБЛИОТЕКА.книга</title>
+        <title>Библиотека.Описание книга</title>
     </head>
     <body>
         <div class="default__container">
-            <h1 class="default__header--1<?php if(isset($_GET['admin'])) echo ' warning';?>">Библиотека</h1>
-            <h2 class="default__header--1">"<?=$book['title']?>"</h2>
-            <h3><?=$book['author']?></h3>
-
-<?php               if(isset($_GET['admin'])) 
-                        echo '<small>Исправлена: '.$book['change_date'].'</small><br>
-                              <small>Добавлена: '.$book['date'].'</small><br>';
-                    else
-                        echo '<small>Добавлена: '.intro($book['date'],16).'</small><br>';
-
-                    if(empty($book['description'])) 
-                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i>'; 
+            <div class="default__header">
+                <h1 class="default__header--1<?php if(isset($_GET['admin'])) echo ' warning';?>">Описание</h1>
+            </div>
+            <div class="book__card">
+                <h2 class="book__title">"<?=$book['title']?>"</h2>
+                <h3 class="book__author"><?php if (empty($book['author'])) echo 'автор не указан'; else echo $book['author'];?></h3>
+                <div class="default__line"></div>
+                <div class="book__description">
+                    
+<?php               if(empty($book['description'])) 
+                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i></div>'; 
                     else 
-                        echo '<p class="book_read">'.$book['description'].'</p>';
-?>
-
-            <a class="default__link--nodecoration" href="admin/index.php?action=edit&id=<?=$book['id'];?><?php if(isset($_GET['admin'])) echo '&admin'?>"><button class="default__button" type="submit"><span class="default__symbols--contactSend"></span>Редактировать</button></a>
-            <a class="default__link--nodecoration" href="index.php"><button class="default__button"><span class="default__symbols--contactSend"></span>Каталог</button></a>
+                        echo $book['description'].'</div>';?>
+                <div class="default__line"></div>               
+<?php               if(isset($_GET['admin'])) {
+                        echo '<div class="default__bookInfo">Исправлена: ';
+                        if (empty($book['change_date'])) echo 'не редактировалась';
+                                                    else echo $book['change_date'];
+                        echo '<br>Добавлена: '.$book['date'].'<br>';
+}
+                    else
+                        echo '<div class="default__bookInfo">Добавлена: '.intro($book['date'],16).'<br>';
+                    if (!empty($book['contributor'])) echo 'Добавил: '.$book['contributor'];?>
+                </div>
+            </div>
+            <div class="default__buttonContainer">
+                
+                <a class="default__link--nodecoration default__button default__button--<?php                       
+                        if ((!empty($book['description']))&&(isset($_GET['admin']))) echo 'warning'; else echo 'recomended';?>" href="admin/index.php?action=<?php 
+                        if((!isset($_GET['admin']))&&(!empty($book['description']))) echo 'add'; else echo 'edit';?>&id=<?=$book['id'];?><?php if(isset($_GET['admin'])) echo '&admin';?>"><?php 
+                        if((!isset($_GET['admin']))&&(!empty($book['description']))) echo 'Добавить новую'; else echo 'Редактировать';?>
+                </a>
+                
+                <a class="default__link--nodecoration default__button default__button--recomended" href="<?php if (isset($_GET['admin'])) echo 'admin/';?>index.php"><?php if (!isset($_GET['admin'])) echo 'Каталог'; else echo 'Редактор библиотеки';?>
+                </a>
+            </div>
         </div>
     </body>
 </html>

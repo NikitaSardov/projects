@@ -362,7 +362,7 @@ gulp.task('watcher_library', function(){
   gulp.watch(html.library, ['html_library']);
   gulp.watch(php.library, ['php_library']);
   gulp.watch(ht.library, ['ht_library']);
-//  gulp.watch(js.library, ['js_library']);
+  gulp.watch(js.library, ['js_library']);
   gulp.watch(css.library, ['css_library']);
 //  gulp.watch(img.library, ['img_library']);
 });
@@ -382,4 +382,4 @@ gulp.task('compile_library', ['html_library', 'php_library', 'ht_library', 'js_l
 
 //gulp.task('default', ['html_final', /*'js_final',*/ 'header_final', 'css_final', 'img_final', 'watcher_final', 'bsync_final']); 
 
-gulp.task('default', ['html_library', 'php_library', 'ht_library', 'ttf_library', /*'js_library', */'css_library', 'img_library', 'watcher_library' /*, 'bsync_library'*/]); 
+gulp.task('default', ['html_library', 'php_library', 'ht_library', 'ttf_library', 'js_library', 'css_library', 'img_library', 'watcher_library' /*, 'bsync_library'*/]); 

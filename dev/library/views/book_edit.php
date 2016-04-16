@@ -6,23 +6,29 @@
 		<style>
 		</style>
 		<link href="../css/styles.css" rel="stylesheet" type="text/css" />
-        <title>Библиотека</title
+        <title>Редактор библиотеки.Редактирование книги</title
     </head>
     <body>
         <div class="default__container">
-            <h2>Редактировать книгу</h2>
-            <form method="post" action="index.php?action=edit&id=<?=$books['id']?>">
-                <input class="input__title input" name="title" type="text" placeholder="Название книги" value="<?=$books['title']?>" required>
-				<input class="input__author input" name="author" type="text" placeholder="Автор" value="<?=$books['author']?>"><br>
-                <textarea class="input__description input" name="description" placeholder="Фрагмент (по желанию)"><?=$books['description']?></textarea>
+            <div class="default__header">
+                <h2 class="default__header--2 default--warning">Редактировать</h2>
+            </div>
+            <form method="post" action="index.php?action=edit&id=<?=$books['id']?>" onsubmit="return validateForm()">
+                <div class="input">
+                    <input class="input__title" name="title" type="text" placeholder="Название книги" value="<?=$books['title']?>" required>
+				    <input class="input__author" name="author" type="text" placeholder="Автор" value="<?=$books['author']?>" required>
+                    <textarea class="input__description" name="description" placeholder="Фрагмент (по желанию)" autofocus required><?=$books['description']?></textarea>
+                </div>
                 <div class="default__bookInfo">Исправление: <?=$books['change_date']?><br>
                 Добавление: <?=$books['date']?></div>
                 <input name="change_date" type="hidden" value="<?=date('d-m-Y H:i:s')?>">
                 <input name="editor_IP" type="hidden" value="<?=$_SERVER['REMOTE_ADDR']?>">
-				<button class="default__button" type="submit"><span class="default__symbols--contactSend"></span>Сохранить</button>
+                <div class="default__buttonContainer">
+				    <button class="default__button default__button--warning" type="submit">Сохранить</button>
+                    <a class="default__link--nodecoration default__button default__button--recomended" href="<?php if(isset($_GET['admin'])) echo 'index.php'; 
+                            else echo '../index.php';?>">Отмена</a>
+                </div>
 			</form>
-            <a class="default__link--nodecoration default__button" href="<?php if(isset($_GET['admin'])) echo 'index.php'; 
-                        else echo '../index.php';?>"><!--span class="default__symbols--contactSend"></span-->Отмена</a>
         </div>
         <!--script>        
         if (window.localStorage) {

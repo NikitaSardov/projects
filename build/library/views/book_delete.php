@@ -6,17 +6,23 @@
 		<style>
 		</style>
 		<link href="../css/styles.css" rel="stylesheet" type="text/css" />
-        <title>Библиотека</title>
+        <title>Редактор библиотеки.Удаление</title>
     </head>
     <body>
         <div class="default__container">
-            <h2 class="warning">Удалить КНИГУ??</h2>
-			<form method="post" action="index.php?action=delete&confirm=1&id=<?=$books['id']?>">
-                <label><h3 class="book__title"><input type="checkbox" name="id" value="<?=$books['id']?>" required><?=$books['title']?></h3></label>
-                <h4 class="book__author"><?=$books['author']?></h4>
-                <p class="default__bookAdded">Книга добавлена: <?=$books['date']?></p><br>
-                <a class="default__link--nodecoration default__button" href="index.php"><span class="default__symbols--contactSend"></span>Не удалять</a>
-				<button class="default__button" type="submit"><span class="default__symbols--contactSend"></span>Да, удалить</button>
+            <div class="default__header">
+                <h2 class="default__header--2 default--warning">Удалить??</h2>
+            </div>
+			<form method="post" action="index.php?action=delete&confirm=1&id=<?=$book['id']?>">
+                <div class="book__card--form">
+                    <label><h3 class="book__title"><input type="checkbox" name="id" value="<?=$book['id']?>" required><?=$book['title']?></h3></label>
+                    <h4 class="book__author"><?=$book['author']?></h4>
+                    <p class="default__bookInfo"><?php if (!empty($book['date'])) echo 'Книга добавлена: '.$book['date']; if (!empty($book['contributor'])) echo '<br>Добавил: '.$book['contributor'];?></p><br>
+                </div>    
+                <div class="default__buttonContainer">
+                    <a class="default__link--nodecoration default__button default__button--recomended" href="index.php">Не удалять</a>
+				    <button class="default__button default__button--warning" type="submit">Да, удалить</button>
+                </div>
 			</form>
         </div>
     </body>
