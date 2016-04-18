@@ -5,6 +5,6 @@
     $link = db_connect();
     $books = books_all($link);
 
-        $books = books_all($link);
-        include("views/catalog.php");
+    $books = books_all($link);
+    include("views/catalog.php");
 ?>

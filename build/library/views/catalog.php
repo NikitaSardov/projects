@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> <style></style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
@@ -25,9 +25,10 @@
                         <a class="default__link--nodecoration canHide" href="<?php if(!empty($book['description'])) echo 'book.php?id='.$book['id']; else echo 'admin/index.php?action=edit&id='.$book['id']; if(isset($_GET['admin'])) echo '&admin';?>">                   
                             <div class="book__description"><?php 
                                 if(empty($book['description'])) 
-                                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i></div>'; 
+                                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i>'; 
                                 else 
-                                        echo intro(($book['description']),50).'</div>';?>
+                                        echo intro(($book['description']),50);?>
+                            </div>
                             <div class="default__bookInfo">Книга добавлена: <?=intro($book['date'],16)?>
                             <?php if (!empty($book['contributor'])) echo '<br>Добавил: '.$book['contributor'];?></div>
                                 <div class="default__button"><?php if(!empty($book['description'])) echo 'Просмотреть'; else echo 'Редактировать';?></div>

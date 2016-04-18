@@ -58,7 +58,7 @@
         
     $query =  sprintf($t, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $author), mysqli_real_escape_string($link, $description), mysqli_real_escape_string($link, $date), mysqli_real_escape_string($link, 'не редактировалась'), mysqli_real_escape_string($link, $contributor), mysqli_real_escape_string($link, $contributor_IP));
         
-    ///    echo $query;
+    //    echo $query;
         $result = mysqli_query($link, $query);
         
         if (!$result) 

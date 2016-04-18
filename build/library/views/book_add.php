@@ -14,7 +14,7 @@
                 <h1 class="default__header--1">Библиотека</h1>
                 <h2 class="default__header--2 default--recomended">Новая книга</h2>
             </div>
-            <form method="post" action="index.php?action=add<?php if (isset($_GET['admin'])) echo '&admin';?>"  onsubmit="return validateForm()">
+            <form method="post" action="index.php?action=add<?php if (isset($_GET['admin'])) echo '&admin';?>">
                 <div class="input">
                     <input class="input__title" name="title" type="search" placeholder="Название книги" required autofocus>
 				    <input class="input__author" name="author" type="search" placeholder="Автор">
@@ -25,29 +25,13 @@
                 <input name="contributor_IP" type="hidden" value="<?=$_SERVER['REMOTE_ADDR']?>">
                 <div class="default__buttonContainer">
                     <button type="submit" class="default__button default__button--recomended">Сохранить</button>
-                    <a class="default__link--nodecoration default__button default__button--warning" href="<?php if (!isset($_GET['admin'])) echo '../';?>index.php">
+                    <a class="default__link--nodecoration" href="<?php if (!isset($_GET['admin'])) echo '../';?>index.php"><button type="button" class="default__button default__button--warning">
     <?php                   if (!isset($_GET['admin'])) echo 'Каталог'; 
                             else echo 'Редактор библиотеки';?>
+                        </button>
                     </a>
                 </div>
 			</form>
-        
-        <script>        
-        if (window.localStorage) {
-          var elements = document.querySelectorAll('[name]');
-
-          for (var i = 0, length = elements.length; i < length; i++) {
-            (function(element) {
-              var name = element.getAttribute('name');
-
-              element.value = localStorage.getItem(name) || '';
-
-              element.onkeyup = function() {
-                localStorage.setItem(name, element.value);
-              };
-            })(elements[i]);
-          }
-        }
-        </script>
+        </div>
       </body>
 </html>

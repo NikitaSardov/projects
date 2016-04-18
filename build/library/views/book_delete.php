@@ -20,7 +20,7 @@
                     <p class="default__bookInfo"><?php if (!empty($book['date'])) echo 'Книга добавлена: '.$book['date']; if (!empty($book['contributor'])) echo '<br>Добавил: '.$book['contributor'];?></p><br>
                 </div>    
                 <div class="default__buttonContainer">
-                    <a class="default__link--nodecoration default__button default__button--recomended" href="index.php">Не удалять</a>
+                    <a class="default__link--nodecoration" href="index.php"><button type="button" class="default__button default__button--recomended">Не удалять</button></a>
 				    <button class="default__button default__button--warning" type="submit">Да, удалить</button>
                 </div>
 			</form>

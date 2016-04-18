@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html <?php if (mb_strlen($book['description'])>600) echo 'lang="ru"';?>>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -15,23 +15,25 @@
                 <h2 class="book__title">"<?=$book['title']?>"</h2>
                 <h3 class="book__author"><?php if (empty($book['author'])) echo 'автор не указан'; else echo $book['author'];?></h3>
                 <div class="default__line"></div>
-                <div class="book__description">
+                <div class="book__description<?php if (mb_strlen($book['description'])>600) echo '--read'?>">
                     
 <?php               if(empty($book['description'])) 
-                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i></div>'; 
+                        echo '<i>Нет описания. Вы можете добавить его, нажав кнопку "Редактировать"</i>'; 
                     else 
-                        echo $book['description'].'</div>';?>
-                <div class="default__line"></div>               
+                        echo $book['description'];?>
+                </div>
+            <div class="default__line"></div>               
+            <div class="default__bookInfo">
 <?php               if(isset($_GET['admin'])) {
-                        echo '<div class="default__bookInfo">Исправлена: ';
+                        echo 'Исправлена: ';
                         if (empty($book['change_date'])) echo 'не редактировалась';
                                                     else echo $book['change_date'];
                         echo '<br>Добавлена: '.$book['date'].'<br>';
 }
                     else
-                        echo '<div class="default__bookInfo">Добавлена: '.intro($book['date'],16).'<br>';
+                        echo 'Добавлена: '.intro($book['date'],16).'<br>';
                     if (!empty($book['contributor'])) echo 'Добавил: '.$book['contributor'];?>
-                </div>
+            </div>
             </div>
             <div class="default__buttonContainer">
                 
