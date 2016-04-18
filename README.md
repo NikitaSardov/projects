@@ -3,6 +3,7 @@ single repository for everything
 
 Автопроверка валидности HTML через TravisCI
 ##Статус: ![](https://travis-ci.org/nikitasardov/projects.svg)
-Сейчас не до валидности) Чуть позже разберусь с Тревисом.
 
-##["Библиотека" будет готова к 20 апреля. Подробности по ссылке.](https://nikitasardov.github.io/projects/index.html)
+##["Библиотека" готова. Можно и нужно тестировать](http://f0074020.xsph.ru/).
+
+##[Дневник начинающего разработчика здесь =)](https://nikitasardov.github.io/projects/index.html)
